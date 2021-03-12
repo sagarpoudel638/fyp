@@ -26,11 +26,11 @@
                 <div style="display:flex;">
                     <div style="display:inline">
                         <div class="form__group field">
-                                    <input type="text" class="form__field" placeholder="Name Of User" name="NameofUser"  required />
+                                    <input type="text" class="form__field" placeholder="Name Of User" name="name"  required />
                                     <label for="name" class="form__label">Name Of User</label>
                         </div>
                         <div class="form__group field">
-                                <input type="text" class="form__field" placeholder="Email" name="Email"  required />
+                                <input type="text" class="form__field" placeholder="Email" name="email"  required />
                                 <label for="name" class="form__label">Email</label>
                         </div>
                         <div class="form__group field">
@@ -45,13 +45,13 @@
                     </div>
                     <div style="display:inline; margin:240px 0px 10px 300px ">
                                 <div class="buttons" style="margin-top:0px; height:60px">
-                                            <a href="#" class="btn effect01" target="_blank"><span>Add Staff</span></a>
+                                            <a  type="submit"class="btn effect01" target="_blank"><span>Add Staff</span></a>
                                 </div>
                                 <div class="buttons" style="margin-top:0px; height:60px ; margin-bottom:80px">
                                             <a href="#" class="btn effect01" target="_blank"><span>View Staff</span></a>
                                 </div>
                                 
-                         </div>
+                    </div>
                     
                     
                </div>
