@@ -126,9 +126,9 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\islington\FYP\LaravelProject\IMS\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! E:\islington\FYP\LaravelProject\IMS\resources\sass\login.scss */"./resources/sass/login.scss");
-module.exports = __webpack_require__(/*! E:\islington\FYP\LaravelProject\IMS\resources\sass\main.scss */"./resources/sass/main.scss");
+__webpack_require__(/*! D:\fyp\FYP\LaravelProject\IMS\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! D:\fyp\FYP\LaravelProject\IMS\resources\sass\login.scss */"./resources/sass/login.scss");
+module.exports = __webpack_require__(/*! D:\fyp\FYP\LaravelProject\IMS\resources\sass\main.scss */"./resources/sass/main.scss");
 
 
 /***/ })

@@ -7,6 +7,7 @@
 
     <title>IMS Admin</title>
     <link rel="stylesheet" href="/css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
@@ -22,9 +23,9 @@
 <header>
     <div class="flex-head">
 	
-        <img src="../../images/logo.png" style=" height:100px; width:100px;" alt="logo">
+        <!--<img src="../../images/logo.png" style=" height:100px; width:100px;" alt="logo">-->
         <div class = "title">IMS Admin Panel</div>
-        <div class = "userdesc">Name of user</div>
+       <!-- <div class = "userdesc">Name of user</div>-->
     </div>
     
 </header>

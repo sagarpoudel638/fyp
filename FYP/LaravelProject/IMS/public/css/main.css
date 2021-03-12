@@ -1,11 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Leckerli+One);* {
-  font-family: sans-serif;
+* {
   box-sizing: border-box;
 }
 
 body {
+  font-family: "Chivo", sans-serif;
+  font-weight: 500;
   margin: 0;
-  background: #ECF0F1;
+  background: #f8f8f8;
 }
 
 .flex-head {
@@ -22,12 +23,12 @@ body {
 }
 
 .title {
-  margin-left:600px;
-  font-size: 40px;
   background: #42c588;
   padding-top: 1.5rem;
-  
-  font-family:Copperplate Gothic Light;
+  font-weight: 800;
+  font-size: 40px;
+  margin-left: 630px;
+  color:#FFFFFF
 }
 
 .userdesc {
@@ -38,7 +39,7 @@ body {
 
 .flex-page {
   display: flex;
-  height: 140vh;
+  height: auto;
   overflow: hidden;
 }
 
@@ -56,7 +57,7 @@ body {
 .side-nav ul li a {
   padding: 0.75rem 2rem;
   font-size: 1.2rem;
-  color: #ECF0F1;
+  color: #f8f8f8;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -71,11 +72,18 @@ body {
   background: #055736;
 }
 
-h1 {
+#dates {
   font-size: 1.2rem;
   font-family: monospace;
   text-align: center;
-  color: #ECF0F1;
+  color: #ffffff;
+}
+
+#time {
+  font-size: 1.3rem;
+  font-family: monospace;
+  text-align: center;
+  color: #ffffff;
   margin-right: 10px;
 }
 
@@ -181,7 +189,7 @@ h1 {
   position: relative;
   float: left;
   min-width: 200px;
-  margin: 50px 33%;
+  margin: 50px;
 }
 
 select::-ms-expand {
@@ -227,8 +235,13 @@ select::-ms-expand {
 h2 {
   margin-top: 10px;
   margin-left: 500px;
-  font-family: "Leckerli One", cursive;
-  text-shadow: 0 2px rgba(0, 0, 0, 0.5);
+  font-family: "Playfair Display", serif;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-left: 350px;
+  font-family: "Playfair Display", serif;
 }
 
 /* horizontal bar */
@@ -236,7 +249,7 @@ h2 {
 hr {
   height: 0px;
   border-radius: 2px;
-  color: teal;
+  color: #fff;
   border: 2px solid currentColor;
   width: 80%;
   margin-bottom: 25px;
@@ -254,8 +267,8 @@ hr {
   text-align: center;
   width: 100%;
   height: 100%;
-  margin: 0 auto;
-  /*   padding: 2em 0em; */
+  margin: 0;
+  padding: 2em 0em;
 }
 
 .container {

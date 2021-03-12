@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>IMS</title>
+	<link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
 
 
@@ -20,9 +21,9 @@
 <header>
     <div class="flex-head">
 	
-        <img src="../../images/logo.png" style=" height:100px; width:100px;" alt="logo">
+        <!--<img src="../../images/logo.png" style=" height:100px; width:100px;" alt="logo">-->
         <div class = "title">IMS</div>
-        <div class = "userdesc">Name of user</div>
+        <!--<div class = "userdesc">Name of user</div>-->
     </div>
     
 </header>
