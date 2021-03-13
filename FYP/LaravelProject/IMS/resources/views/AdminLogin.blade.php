@@ -6,9 +6,17 @@
     
 </head>
 <body>
-    <form class="login">
+<form action="{{route('admin.check')}}" method="post" class="login">
+    @csrf
         <center><h2>Institute Management System</h2></center>
         <center><h4>Admin Panel</h4></center>
+        @if (Session::get('success'))
+        {{Session::get('success')}}
+        @endif
+        @if (Session::get('fail'))
+        {{Session::get('fail')}}
+        @endif
+
         
     <input type="text" name="email" placeholder="Email">
 
