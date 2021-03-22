@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="347D51D8-563B-65DE-93B4-889E12330BFB" name="User">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 07:02:08 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="DA0C1BC9-A49A-3516-6CEA-5F395A49B6C7">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 07:02:49 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="3C738989-2E5E-0D4F-973B-64BA4B8CEB67">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 07:02:49 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Email" id="F69B0C9B-92F0-3A8D-91F9-A67FA7C0E0AD">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 07:03:17 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="5FCE5569-A65B-61DB-05EC-F3C3C18ACB7B">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 07:03:17 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="84E5B213-61BA-F214-BFE6-5855E845960F" name="User_PK">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 07:05:17 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DA0C1BC9-A49A-3516-6CEA-5F395A49B6C7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

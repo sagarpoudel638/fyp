@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4D164C87-D990-FF5D-F00A-39C93F0629FF" name="Student ">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:40:31 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="45C18595-9A36-F6C4-04DB-6179CD736A89">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:41:21 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Student Name " id="174D31C0-1B11-9B87-1673-AAEFC4EF6980">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:41:43 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Primary Number " id="2E271A97-B90B-A5AE-E425-C8546D331535">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:42:06 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Secondary Number" id="07641F24-45A7-0ABD-6D68-D0A6E6F56F75">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:42:31 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Gender" id="B364A5F8-FA79-3F09-9C75-CD612E1F07DA">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:43:00 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Address " id="A181E8E5-CCB3-A7CD-FA3B-9917BC2A8C0B">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:44:09 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Enroll Date " id="1C0FA61C-17E8-96D8-F428-550D68582F11">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:45:27 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Course_id " id="80459DD1-E69C-56AA-D584-B32F96FCF532">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:58:08 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C44C3A1C-E6C6-8A1B-2C56-A71384141387" referredColumn="E6420A3E-73F1-04FA-7763-B0CA61DE4AFE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0F5F8D8A-578D-9A60-43E2-1814C2F0F342" name="Student_PK">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:41:21 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="45C18595-9A36-F6C4-04DB-6179CD736A89"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7E6166C2-FFD0-367C-AF62-9B2FEB4ED734" name="Student _Course_FK">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:58:07 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="80459DD1-E69C-56AA-D584-B32F96FCF532"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

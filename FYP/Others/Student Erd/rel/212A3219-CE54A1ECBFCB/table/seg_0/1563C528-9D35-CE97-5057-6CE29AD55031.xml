@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1563C528-9D35-CE97-5057-6CE29AD55031" name="Course">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:45:51 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id " id="E6420A3E-73F1-04FA-7763-B0CA61DE4AFE">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:57:07 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Course " id="07FC9F06-9DB9-330C-5D38-107A9E48FB85">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:57:58 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fee" id="9A37AFAA-759F-89B5-11B1-480FF332122D">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:57:58 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8066F459-320F-D40C-D587-B3D7C1E41C57" name="Course_PK">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 06:57:07 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6420A3E-73F1-04FA-7763-B0CA61DE4AFE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0AE0B878-287C-E8BC-038B-9766162A407A" name="StudentUser">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 07:04:10 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Student _id" id="251E047A-25DB-9D7F-0FEC-B07DB7C5F6B6">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 07:04:41 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0F7E94B9-BB64-16FB-A591-078A2FFBBD89" referredColumn="45C18595-9A36-F6C4-04DB-6179CD736A89"/>
+</associations>
+</Column>
+<Column name="User_id" id="62EAE786-7BA3-1545-3A72-F6DCE5B62F8A">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 07:05:21 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E83E286E-AEF9-86D7-FCC5-3423C669FB9D" referredColumn="DA0C1BC9-A49A-3516-6CEA-5F395A49B6C7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E4CE874F-36B0-8FB6-55A7-1889298E049B" name="StudentUser_Student _FK">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 07:04:41 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="251E047A-25DB-9D7F-0FEC-B07DB7C5F6B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="476E8F74-E39D-4B4E-BEBD-2967DF4FC105" name="StudentUser_User_FK">
+<createdBy>user</createdBy>
+<createdTime>2021-03-22 07:05:21 UTC</createdTime>
+<ownerDesignName>Student Erd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62EAE786-7BA3-1545-3A72-F6DCE5B62F8A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
