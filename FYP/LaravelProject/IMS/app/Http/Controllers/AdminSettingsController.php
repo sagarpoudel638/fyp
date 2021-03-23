@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class AdminSettingsController extends Controller
 {
     function AdminSettingsDashboard(){
-        return view('admin.AdminSettings');
+        return view('admin.Settings');
     }
 }

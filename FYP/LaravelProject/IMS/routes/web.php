@@ -10,7 +10,8 @@ use App\Http\Controllers\StudentDetailsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\AdminAuthController;
-
+use App\Http\Controllers\AdminCourseSettingsController;
+use App\Http\Controllers\AdminStaffSettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +31,10 @@ use App\Http\Controllers\AdminAuthController;
 
 
 
-
-Route::get('/AdminReports', [AdminReportsController::class, 'AdminReportsDashboard'])->middleware('isLoggedAdmin');
 Route::get('/AdminSettings', [AdminSettingsController::class, 'AdminSettingsDashboard'])->middleware('isLoggedAdmin');
+Route::get('/AdminReports', [AdminReportsController::class, 'AdminReportsDashboard'])->middleware('isLoggedAdmin');
+Route::get('/AdminStaffSettings', [AdminStaffSettingsController::class, 'AdminStaffSettingsDashboard'])->middleware('isLoggedAdmin');
+Route::get('/AdminCourseSettings', [AdminCourseSettingsController::class, 'AdminCourseSettingsDashboard'])->middleware('isLoggedAdmin');
 
 Route::get('/', [RegisterStudentController::class, 'RegisterStudentDashboard'])->name('RegisterStudentDashboard')->middleware('isLogged');
 Route::get('/POS', [POSController::class, 'POSDashboard'])->middleware('isLogged');

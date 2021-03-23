@@ -19,15 +19,15 @@
 
 
 
-    
+
 <header>
     <div class="flex-head">
-	
+
         <!--<img src="../../images/logo.png" style=" height:100px; width:100px;" alt="logo">-->
         <div class = "title">IMS Admin Panel</div>
        <!-- <div class = "userdesc">Name of user</div>-->
     </div>
-    
+
 </header>
 <script>
        var printDate = function () {
@@ -70,11 +70,11 @@
 setInterval(printDate, 1000);
 
    </script>
- 
 
-    
+
+
 <div class="flex-page">
-    
+
   <div class="side-nav">
     <ul>
 	<li>
@@ -84,8 +84,10 @@ setInterval(printDate, 1000);
     </div>
  </li>
       <li><a href="AdminReports">Reports</a></li>
+      <li><a href="AdminStaffSettings">Staff Settings</a></li>
+      <li><a href="AdminCourseSettings">Course Settings</a></li>
       <li><a href="AdminSettings">Settings</a></li>
-     
+
     </ul>
   </div>
   @yield('container')

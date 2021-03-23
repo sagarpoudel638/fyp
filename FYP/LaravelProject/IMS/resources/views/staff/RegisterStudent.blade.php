@@ -26,9 +26,9 @@
                     <input type="input" class="form__field" placeholder="Secondary Number" name="SecondaryNumber" required />
                     <label for="name" class="form__label">Secondary Number</label>
                 </div>
-            </div> 
+            </div>
             <div style="display:inline; margin-left:200px; margin-top:50px;">
-                <div class="selectdiv">    
+                <div class="selectdiv">
                     <label>
                         <select required>
                             <option value="" hidden> Gender</option>
@@ -50,7 +50,7 @@
                     </label>
                 </div>
             </div>
-        </div>   
+        </div>
 
         <div style="display:flex;border-radius: 1%; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); margin-left:100px;height:500px; margin-top:20px">
             <div style="display:inline">
@@ -74,18 +74,18 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <div class="buttons" style="margin:50px 0px 100px 465px;">
-              
+
                     <a href="#" class="btn effect01" target="_blank"><span>Register</span></a>
-                
+
         </div>
 
     </div>
-    
-    
+
+
    <!-- -->
 
 @endsection

@@ -3,7 +3,7 @@
 <head>
     <title>Staff Login</title>
     <link rel="stylesheet" href="/css/login.css">
-    
+
 </head>
 <body>
     <form action="{{route('auth.check')}}" method="post" class="login">
@@ -17,7 +17,7 @@
         @endif
 
 
-        
+
         <input type="text" name="email" placeholder="Email">
         <span class="text-danger">@error('email'){{$message}}@enderror</span>
 

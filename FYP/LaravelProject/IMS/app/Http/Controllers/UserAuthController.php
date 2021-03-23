@@ -12,7 +12,7 @@ class UserAuthController extends Controller
         return view('StaffLogin');
     }
 
-    
+
 
     function create( Request $request){
         $request->validate([
@@ -29,8 +29,8 @@ class UserAuthController extends Controller
         $query = $user->save();
 
         if ($query){
-            return back()->with('success','You have been registered');
-            
+            return back()->with('Success','You have been registered');
+
         }
         else{return back()->with('fail','Error Occured');}
 
@@ -64,17 +64,17 @@ class UserAuthController extends Controller
             $data = [
                 'LoggedUserInfo'=> $user
             ];
-            
-            
+
+
         }
         return view('home',$data);
-        
-        
+
+
     }**/
-    
-    
-    
-  
+
+
+
+
 
     function logout(){
         if(session()->has('LoggedUser')){
