@@ -30,11 +30,11 @@ use App\Http\Controllers\AdminStaffSettingsController;
 
 
 
-
+Route::get('/admin', [AdminSettingsController::class, 'AdminSettingsDashboard'])->middleware('isLoggedAdmin');
 Route::get('/AdminSettings', [AdminSettingsController::class, 'AdminSettingsDashboard'])->middleware('isLoggedAdmin');
 Route::get('/AdminReports', [AdminReportsController::class, 'AdminReportsDashboard'])->middleware('isLoggedAdmin');
 Route::get('/AdminStaffSettings', [AdminStaffSettingsController::class, 'AdminStaffSettingsDashboard'])->middleware('isLoggedAdmin');
-Route::get('/AdminCourseSettings', [AdminCourseSettingsController::class, 'AdminCourseSettingsDashboard'])->middleware('isLoggedAdmin');
+Route::get('/AdminCourseSettings', [AdminCourseSettingsController::class, 'AdminCourseSettingsDashboard'])->name('course')->middleware('isLoggedAdmin');
 
 Route::get('/', [RegisterStudentController::class, 'RegisterStudentDashboard'])->name('RegisterStudentDashboard')->middleware('isLogged');
 Route::get('/POS', [POSController::class, 'POSDashboard'])->middleware('isLogged');
@@ -49,4 +49,16 @@ Route::get('logout', [UserAuthController::class, 'logout'])->middleware('isLogge
 
 Route::get('/adminlogin', [AdminAuthController::class, 'adminlogin']);
 Route::post('admincheck', [AdminAuthController::class, 'admincheck'])->name('admin.check');
-Route::get('adminlogout', [AdminAuthController::class, 'adminlogout'])->middleware('isLoggedAdmin');
+Route::get('logoutadmin', [AdminAuthController::class, 'adminlogout'])->middleware('isLoggedAdmin');
+
+
+Route::any('/edit', [AdminCourseSettingsController::class, 'editCourse'])->name('editCourse')->middleware('isLoggedAdmin');
+Route::any('add', [AdminCourseSettingsController::class, 'addCourse'])->name('addCourse')->middleware('isLoggedAdmin');
+Route::any('delete/{user_id?}', [AdminCourseSettingsController::class, 'deleteCourse'])->name('deleteCourse')->middleware('isLoggedAdmin');
+Route::any('edit/{user_id?}', [AdminCourseSettingsController::class, 'editCourse'])->name('editCourse');
+Route::any('edit_action', [AdminCourseSettingsController::class, 'editAction'])->name('editActionUser')->middleware('isLoggedAdmin');
+
+
+
+
+

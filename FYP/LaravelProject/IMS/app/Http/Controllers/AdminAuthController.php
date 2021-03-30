@@ -12,7 +12,7 @@ class AdminAuthController extends Controller
         return view('AdminLogin');
     }
 
-    
+
 
 
     function admincheck(Request $request){
@@ -43,17 +43,17 @@ class AdminAuthController extends Controller
             $data = [
                 'LoggedUserInfo'=> $user
             ];
-            
-            
+
+
         }
         return view('home',$data);
-        
-        
+
+
     }**/
-    
-    
-    
-  
+
+
+
+
 
     function adminlogout(){
         if(session()->has('LoggedAdmin')){

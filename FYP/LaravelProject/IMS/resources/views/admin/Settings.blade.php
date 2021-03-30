@@ -36,9 +36,9 @@
 margin-left:350px; ">
     <a class="btn effect01" href="logoutadmin" style="height:60px;
     color: #FFF;
-border: 4px solid red;
-box-shadow: 0px 0px 0px 1px red inset;
-background-color: red;
+border: 4px solid #c00e19;
+box-shadow: 0px 0px 0px 1px #c00e19 inset;
+background-color: #c00e19;
 overflow: hidden;
 position: relative;
 transition: all 0.3s ease-in-out;

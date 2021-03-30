@@ -198,7 +198,6 @@ select::-ms-expand {
 
 .selectdiv:after {
   content: "<>";
-  font: 17px "Consolas", monospace;
   color: #333;
   transform: rotate(90deg);
   right: 11px;
@@ -241,7 +240,7 @@ h2 {
 h3 {
   margin-top: 10px;
   margin-left: 350px;
-  font-family: "Playfair Display", serif;
+  font-family: "Consolas", monospace;
 }
 
 /* horizontal bar */
@@ -399,5 +398,205 @@ p {
   opacity: 0;
   left: 120%;
   transform: rotate(40deg);
+}
+
+.tablecontainer {
+  margin-top: 20%;
+  margin-left: 40%;
+  margin-bottom: 10%;
+}
+
+table {
+  width: 800px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+th {
+  text-align: left;
+}
+
+thead th {
+  background-color: #055736;
+}
+
+tbody {
+  background-color: #055736;
+}
+
+tbody tr:hover {
+  background-color: black;
+}
+
+tbody td {
+  position: relative;
+}
+
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: #055736;
+  color: #000;
+  z-index: -1;
+}
+
+.edit {
+  margin: auto;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  z-index: 1;
+}
+
+.edit:after {
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  right: 1.25rem;
+  left: 1.25rem;
+  background-color: #2e6758;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  transform-origin: bottom center;
+  z-index: -1;
+}
+
+.edit:hover {
+  color: white;
+}
+
+.edit:hover:after {
+  right: 0;
+  left: 0;
+  height: 100%;
+}
+
+.delete {
+  margin: auto;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  z-index: 1;
+}
+
+.delete:after {
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  right: 1.25rem;
+  left: 1.25rem;
+  background-color: #c00e19;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  transform-origin: bottom center;
+  z-index: -1;
+}
+
+.delete:hover {
+  color: white;
+}
+
+.delete:hover:after {
+  right: 0;
+  left: 0;
+  height: 100%;
+}
+
+.search {
+  margin-bottom: 5%;
+  margin-left: 0%;
+}
+
+.search > div {
+  display: inline-block;
+  position: relative;
+  filter: drop-shadow(0 1px #055736);
+}
+
+.search > div:after {
+  content: "";
+  background: #055736;
+  width: 4px;
+  height: 20px;
+  position: absolute;
+  top: 21px;
+  right: 0px;
+  transform: rotate(145deg);
+}
+
+.search > div > input {
+  color: #055736;
+  font-size: 16px;
+  background: transparent;
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  border: solid 3px #055736;
+  outline: none;
+  border-radius: 35px;
+  transition: width 0.5s;
+}
+
+.search > div > input::-moz-placeholder {
+  color: #055736;
+  opacity: 0;
+  -moz-transition: opacity 150ms ease-out;
+  transition: opacity 150ms ease-out;
+}
+
+.search > div > input:-ms-input-placeholder {
+  color: #055736;
+  opacity: 0;
+  -ms-transition: opacity 150ms ease-out;
+  transition: opacity 150ms ease-out;
+}
+
+.search > div > input::placeholder {
+  color: #055736;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+
+.search > div > input:focus::-moz-placeholder {
+  opacity: 1;
+}
+
+.search > div > input:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.search > div > input:focus::placeholder {
+  opacity: 1;
+}
+
+.search > div > input:not(:-moz-placeholder-shown) {
+  width: 250px;
+}
+
+.search > div > input:not(:-ms-input-placeholder) {
+  width: 250px;
+}
+
+.search > div > input:focus,
+.search > div > input:not(:placeholder-shown) {
+  width: 250px;
 }
 

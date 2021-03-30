@@ -2,13 +2,11 @@ $primary:rgb(66, 197, 136);
 $primary-dark: rgb(5, 87, 54);
 $white: #f8f8f8;
 
-$greenSeaweed: rgba(2, 128, 144, 1);
-$blueQueen: rgba(69, 105, 144, 1);
-$redFire: rgb(66, 197, 136);
+
 
 // Global
 * {
-  
+
   box-sizing: border-box;
 }
 
@@ -17,9 +15,9 @@ body {
  font-weight: 500;
   margin: 0;
   background: $white;
-  
+
 }
-// header 
+// header
 .flex-head {
     display: flex;
     height: 10vh;
@@ -30,7 +28,7 @@ body {
     background: $primary;
     padding-top: 1.5rem;
     margin: auto;
-    
+
 }
 .title{
 
@@ -45,7 +43,7 @@ body {
 .userdesc{background: $primary;
     padding-top: 1.5rem;
     margin: auto;}
-  
+
 // Page Layout
 .flex-page {
   display: flex;
@@ -73,17 +71,17 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   display: block;
-  
+
   &:hover {
     background: $primary-dark;
   }
-  
+
   &:focus {
     background: $primary-dark;
   }
 }
 
-//clock 
+//clock
 
 #dates {
   font-size: 1.2rem;
@@ -116,7 +114,7 @@ $secondary: #38ef7d;
 $white: #fff;
 $gray: #131313;
 .form__group {
- 
+
   position: relative;
   padding: 15px 0 0;
   margin-top: 50px;
@@ -164,9 +162,9 @@ $gray: #131313;
     transition: 0.2s;
     font-size: 1rem;
     color: $primary;
-    font-weight:700;    
+    font-weight:700;
   }
-  padding-bottom: 6px;  
+  padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
   border-image: linear-gradient(to right, $primary,$secondary);
@@ -195,7 +193,7 @@ display: none;
 
 .selectdiv:after {
   content: '<>';
-  font: 17px "Consolas", monospace;
+
   color: #333;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -203,12 +201,12 @@ display: none;
   transform: rotate(90deg);
   right: 11px;
 
-  
+
   top: 18px;
   padding: 0 0 2px;
   border-bottom: 1px solid #999;
 
-  
+
   position: absolute;
   pointer-events: none;
 }
@@ -217,8 +215,8 @@ display: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
- 
-  
+
+
   display: block;
   width: 100%;
   max-width: 320px;
@@ -245,15 +243,15 @@ h2
   margin-top: 10px;
   margin-left: 500px;
   font-family: 'Playfair Display', serif;
-  
+
 }
 
 h3
 {
   margin-top: 10px;
   margin-left: 350px;;
-  font-family: 'Playfair Display', serif;
-  
+  font-family: "Consolas", monospace;
+
 }
 
 /* horizontal bar */
@@ -315,7 +313,7 @@ hr {
   width: 100%;
   height: 100%;
   margin: 0;
-padding: 2em 0em; 
+padding: 2em 0em;
 }
 
 .container {
@@ -412,4 +410,204 @@ p {
   -webkit-transform: rotate(40deg);
           transform: rotate(40deg);
 }
+
+
+
+
+// table
+.tablecontainer {
+
+	margin-top: 20%;
+  margin-left: 40%;
+  margin-bottom: 10%;
+
+}
+
+table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+thead {
+	th {
+		background-color: $primary-dark;
+	}
+}
+
+tbody {
+    background-color: $primary-dark;
+	tr {
+		&:hover {
+			background-color: black;
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: $primary-dark;
+                color: #000;
+				z-index: -1;
+			}
+		}
+	}
+}
+
+
+
+// edit and delete button
+
+
+
+  .edit{
+
+    margin: auto;
+    padding: 1rem 1.25rem;
+
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: all .3s cubic-bezier(.2, 0, 0, 1);
+    z-index: 1;
+
+    &:after {
+      content: '';
+      display: block;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      right: 1.25rem;
+      left: 1.25rem;
+      background-color: #2e6758;
+      transition: all .3s cubic-bezier(.2, 0, 0, 1);
+      transform-origin: bottom center;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: white;
+
+      &:after {
+        right: 0;
+        left: 0;
+        height: 100%;
+      }
+    }
+  }
+
+
+
+
+
+  .delete{
+
+    margin: auto;
+    padding: 1rem 1.25rem;
+
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: all .3s cubic-bezier(.2, 0, 0, 1);
+    z-index: 1;
+
+    &:after {
+      content: '';
+      display: block;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      right: 1.25rem;
+      left: 1.25rem;
+      background-color: #c00e19;
+      transition: all .3s cubic-bezier(.2, 0, 0, 1);
+      transform-origin: bottom center;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: white;
+
+      &:after {
+        right: 0;
+        left: 0;
+        height: 100%;
+      }
+    }
+  }
+
+
+
+  // search
+
+
+  .search {
+    margin-bottom: 5%;
+    margin-left:0%;
+  }
+
+
+
+  .search > div {
+    display: inline-block;
+    position: relative;
+    filter: drop-shadow(0 1px $primary-dark);
+  }
+
+  .search > div:after {
+    content: "";
+    background: $primary-dark;
+    width: 4px;
+    height: 20px;
+    position: absolute;
+    top: 21px;
+  right: 0px;
+  transform: rotate(145deg);
+  }
+
+  .search > div > input {
+    color: $primary-dark;
+    font-size: 16px;
+    background: transparent;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    border: solid 3px $primary-dark;
+    outline: none;
+    border-radius: 35px;
+    transition: width 0.5s;
+  }
+
+  .search > div > input::placeholder {
+    color: $primary-dark;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+  }
+
+  .search > div > input:focus::placeholder {
+    opacity: 1;
+  }
+
+  .search > div > input:focus,
+  .search > div > input:not(:placeholder-shown) {
+    width: 250px;
+  }
 
