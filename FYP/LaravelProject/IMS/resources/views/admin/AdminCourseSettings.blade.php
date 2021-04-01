@@ -9,12 +9,15 @@
             <h3>Fee</h3>
             <form action="{{route('addCourse')}}" method="post">
             <div style="display:flex; width:100%; margin-bottom:10%">
+
                 <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="Course Name" name="Course"  required />
+                             <a href="" style="color: red;">{{$errors->first('Course')}}</a>
+                            <input type="input" class="form__field" placeholder="Course Name" name="Course"    />
                             <label for="name" class="form__label">Course Name</label>
                 </div>
                 <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="Set Fee" name="Fee"  required />
+                             <a href="" style="color: red;">{{$errors->first('Course')}}</a>
+                            <input type="input" class="form__field" placeholder="Set Fee" name="Fee"   />
                             <label for="name" class="form__label">Set Fee</label>
                 </div>
 
@@ -29,13 +32,17 @@
         </div>
 </div>
 
-
         <div class="tablecontainer">
-            <div class="search">
+            @if (session('success'))
+
+            <a href="" style="color: rgb(66, 197, 136);"> {{session('success')}}</a>
+
+             @endif
+           <!-- <div class="search">
                 <div>
                   <input type="text" placeholder="Search . . ." required>
                 </div>
-              </div>
+              </div>-->
             <table >
                 <thead>
                 <tr>
@@ -74,6 +81,10 @@
             {{$courseData->links()}}
 
         </div>
+
+
+
+
 
 </div>
 

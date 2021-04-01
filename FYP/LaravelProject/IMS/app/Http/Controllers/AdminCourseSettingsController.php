@@ -32,7 +32,7 @@ class AdminCourseSettingsController extends Controller
         if ($request->isMethod('post')) {
             $this->validate($request, [
                 'Course' => 'required|min:3',
-                'Fee' => 'required|min:3',
+                'Fee' => 'required|min:3|numeric',
 
             ]);
             $data['Course'] = $request->Course;
@@ -55,8 +55,8 @@ class AdminCourseSettingsController extends Controller
 
     public function editCourse(Request $request){
         $id= $request->user_id;
-        $editRecord = Course::findOrFail($id);
-        return view('AdminEditCourseSettings', compact('editCourse'));
+        $editCourse = Course::findOrFail($id);
+        return view('admin.AdminEditCourseSettings', compact('editCourse'));
 
     }
     public function editAction(Request $request)
@@ -68,16 +68,15 @@ class AdminCourseSettingsController extends Controller
         if ($request->isMethod('post')) {
             $this->validate($request, [
                 'Course' => 'required|min:3',
-                'Fee' => 'required|min:3',
+                'Fee' => 'required|min:3|numeric',
 
             ]);
             $data['Course'] = $request->Course;
             $data['Fee'] = $request->Fee;
-
-            $id = $request->course_id;
+            $id = $request->Course_id;
 
             if(Course::where('id',$id)->update($data)){
-                return redirect()->route('AdminCourseSettings')->with('success', 'Record is Updated');
+                return redirect()->route('course')->with('success', 'Record is Updated');
             }
         }
     }

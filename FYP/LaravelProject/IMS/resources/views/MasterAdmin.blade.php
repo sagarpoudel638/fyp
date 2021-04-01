@@ -7,10 +7,11 @@
 
     <title>IMS Admin</title>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-
+<script type='text/javascript' src='/js/boootstrap.js'></script>
 
 
 
@@ -86,10 +87,10 @@ setInterval(printDate, 1000);
         <h1 id="time"></h1>
     </div>
  </li>
-      <li><a href="AdminReports">Reports</a></li>
-      <li><a href="AdminStaffSettings">Staff Settings</a></li>
-      <li><a href="AdminCourseSettings">Course Settings</a></li>
-      <li><a href="AdminSettings">Settings</a></li>
+      <li><a href="{{route('adminreports')}}">Reports</a></li>
+      <li><a href="{{route('adminstaff')}}">Staff Settings</a></li>
+      <li><a href="{{route('course')}}">Course Settings</a></li>
+      <li><a href="{{route('adminsettings')}}">Settings</a></li>
 
     </ul>
   </div>

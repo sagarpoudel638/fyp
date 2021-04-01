@@ -7,6 +7,7 @@
 
     <title>IMS</title>
 	<link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
+
     <link rel="stylesheet" href="/css/main.css">
 
 
@@ -17,15 +18,15 @@
 
 
 
-    
+
 <header>
     <div class="flex-head">
-	
+
         <!--<img src="../../images/logo.png" style=" height:100px; width:100px;" alt="logo">-->
         <div class = "title">IMS</div>
         <!--<div class = "userdesc">Name of user</div>-->
     </div>
-    
+
 </header>
 <script>
        var printDate = function () {
@@ -68,11 +69,11 @@
 setInterval(printDate, 1000);
 
    </script>
- 
 
-    
+
+
 <div class="flex-page">
-    
+
   <div class="side-nav">
     <ul>
 	<li>

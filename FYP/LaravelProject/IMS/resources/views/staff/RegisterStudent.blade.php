@@ -40,12 +40,13 @@
                 </div>
                 <div class="selectdiv" style="margin-top:90px">
                     <label>
-                        <select required>
+                        <select id="courselist"  required>
                             <option value="" hidden> Course</option>
-                            <option>Officer</option>
-                            <option>Kharidar</option>
-                            <option>Nayab Subba</option>
-                            <option>Mahila Bikas</option>
+                            @foreach($course as $courses)
+  		                        <option value="{{$courses->id}}"> {{$courses->Course}}</option>
+                        	@endforeach
+
+
                         </select>
                     </label>
                 </div>
@@ -61,7 +62,7 @@
                     </div>
                     <div style="display:inline">
                         <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="Total Fee" name="TotalFee" required disabled/>
+                            <input type="text" class="form__field" id= "coursefee" placeholder="Total Fee" name="TotalFee" required disabled/>
                             <label for="name" class="form__label">Total Fee</label>
                         </div>
                         <div class="form__group field">
@@ -84,7 +85,40 @@
         </div>
 
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
 
+
+            $(document).on('change','#courselist',function () {
+                var course_id=$(this).val();
+
+                var a=$(this).parent();
+                console.log(course_id);
+                var op="";
+                $.ajax({
+                    type:'get',
+                    url:'{!!URL::to('findfee')!!}',
+                    data:{'id':course_id},
+                    dataType:'json',//return data will be json
+                    success:function(data){
+
+
+                        // here price is coloumn name in products table data.coln name
+
+                        a.find('#coursefee').val(data.Fee);
+
+                    },
+                    error:function(){
+
+                    }
+                });
+
+
+            });
+
+        });
+    </script>
 
    <!-- -->
 

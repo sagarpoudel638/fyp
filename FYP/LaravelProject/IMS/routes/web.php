@@ -30,11 +30,11 @@ use App\Http\Controllers\AdminStaffSettingsController;
 
 
 
-Route::get('/admin', [AdminSettingsController::class, 'AdminSettingsDashboard'])->middleware('isLoggedAdmin');
-Route::get('/AdminSettings', [AdminSettingsController::class, 'AdminSettingsDashboard'])->middleware('isLoggedAdmin');
-Route::get('/AdminReports', [AdminReportsController::class, 'AdminReportsDashboard'])->middleware('isLoggedAdmin');
-Route::get('/AdminStaffSettings', [AdminStaffSettingsController::class, 'AdminStaffSettingsDashboard'])->middleware('isLoggedAdmin');
-Route::get('/AdminCourseSettings', [AdminCourseSettingsController::class, 'AdminCourseSettingsDashboard'])->name('course')->middleware('isLoggedAdmin');
+Route::any('/admin', [AdminSettingsController::class, 'AdminSettingsDashboard'])->name('adminsettings')->middleware('isLoggedAdmin');
+Route::any('/AdminSettings', [AdminSettingsController::class, 'AdminSettingsDashboard'])->middleware('isLoggedAdmin');
+Route::any('/AdminReports', [AdminReportsController::class, 'AdminReportsDashboard'])->name('adminreports')->middleware('isLoggedAdmin');
+Route::any('/AdminStaffSettings', [AdminStaffSettingsController::class, 'AdminStaffSettingsDashboard'])->name('adminstaff')->middleware('isLoggedAdmin');
+Route::any('/AdminCourseSettings', [AdminCourseSettingsController::class, 'AdminCourseSettingsDashboard'])->name('course')->middleware('isLoggedAdmin');
 
 Route::get('/', [RegisterStudentController::class, 'RegisterStudentDashboard'])->name('RegisterStudentDashboard')->middleware('isLogged');
 Route::get('/POS', [POSController::class, 'POSDashboard'])->middleware('isLogged');
@@ -55,10 +55,13 @@ Route::get('logoutadmin', [AdminAuthController::class, 'adminlogout'])->middlewa
 Route::any('/edit', [AdminCourseSettingsController::class, 'editCourse'])->name('editCourse')->middleware('isLoggedAdmin');
 Route::any('add', [AdminCourseSettingsController::class, 'addCourse'])->name('addCourse')->middleware('isLoggedAdmin');
 Route::any('delete/{user_id?}', [AdminCourseSettingsController::class, 'deleteCourse'])->name('deleteCourse')->middleware('isLoggedAdmin');
-Route::any('edit/{user_id?}', [AdminCourseSettingsController::class, 'editCourse'])->name('editCourse');
-Route::any('edit_action', [AdminCourseSettingsController::class, 'editAction'])->name('editActionUser')->middleware('isLoggedAdmin');
+Route::any('edit/{user_id?}', [AdminCourseSettingsController::class, 'editCourse'])->name('editCourse')->middleware('isLoggedAdmin');
+Route::any('edit_action', [AdminCourseSettingsController::class, 'editAction'])->name('editActionCourse')->middleware('isLoggedAdmin');
 
 
 
 
+
+Route::get('/courseview',[RegisterStudentController::class, 'course']);
+Route::get('/findfee',[RegisterStudentController::class, 'FindFee']);
 
