@@ -47,6 +47,11 @@ Route::post('create', [UserAuthController::class, 'create'])->name('auth.create'
 Route::post('check', [UserAuthController::class, 'check'])->name('auth.check');
 Route::get('logout', [UserAuthController::class, 'logout'])->middleware('isLogged');
 
+
+
+
+
+
 Route::get('/adminlogin', [AdminAuthController::class, 'adminlogin']);
 Route::post('admincheck', [AdminAuthController::class, 'admincheck'])->name('admin.check');
 Route::get('logoutadmin', [AdminAuthController::class, 'adminlogout'])->middleware('isLoggedAdmin');

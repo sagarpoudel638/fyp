@@ -58,5 +58,62 @@
     </form>
 
 
+    <div class="tablecontainer" style="	margin-top: 20%;
+    margin-left: 0%;
+    margin-bottom: 10%;">
+        @if (session('success'))
+
+        <a href="" style="color: rgb(66, 197, 136);"> {{session('success')}}</a>
+
+         @endif
+       <!-- <div class="search">
+            <div>
+              <input type="text" placeholder="Search . . ." required>
+            </div>
+          </div>-->
+        <table >
+            <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Staff Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Action</th>
+                <th>Create At</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($staffData as $key=>$staffDatum)
+                <tr>
+                    <td>{{++$key}}</td>
+                    <td>{{$staffDatum->name}}</td>
+                    <td>{{$staffDatum->email}}</td>
+                    <td>Hidden</td>
+
+
+
+                    <td>
+
+                        <a href="" class="edit">Edit</a>
+
+
+                        <a href="" class="delete">Delete</a>
+
+                    </td>
+                    <td>{{$staffDatum->created_at->DiffForHumans()}} </td>
+
+                </tr>
+
+            @endforeach
+            </tbody>
+        </table>
+
+
+        {{$staffData->links()}}
+
+    </div>
+
+
 </div>
 @endsection

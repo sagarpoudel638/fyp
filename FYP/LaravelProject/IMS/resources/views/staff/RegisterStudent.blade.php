@@ -60,17 +60,17 @@
                     <div class="buttons" style="margin-top:300px; margin-left:700px">
                                 <a href="#" class="btn effect01" style="height:60px;" target="_blank"><span>Print Receipt</span></a>
                     </div>
-                    <div style="display:inline">
+                  <div style="display:inline">
                         <div class="form__group field">
-                            <input type="text" class="form__field" id= "coursefee" placeholder="Total Fee" name="TotalFee" required disabled/>
+                            <input type="text"  class="form__field" id="TotalFee" placeholder="Total Fee" name="TotalFee"  disabled/>
                             <label for="name" class="form__label">Total Fee</label>
                         </div>
                         <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="Fee Paid" name="FeePaid" required />
+                            <input type="input" class="form__field" id ="FeePaid" placeholder="Fee Paid" name="FeePaid"  />
                             <label for="name" class="form__label">Fee Paid</label>
                         </div>
                         <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="Fee Due" name="FeeDue" required disabled/>
+                            <input type="input" class="form__field" id ="FeeDue"placeholder="Fee Due" name="FeeDue"  disabled/>
                             <label for="name" class="form__label">Fee Due</label>
                         </div>
                     </div>
@@ -84,7 +84,10 @@
 
         </div>
 
+
+
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -92,21 +95,63 @@
 
             $(document).on('change','#courselist',function () {
                 var course_id=$(this).val();
-
-                var a=$(this).parent();
                 console.log(course_id);
+                var a=$(this).parent().parent().parent().parent().parent();
+
+
                 var op="";
                 $.ajax({
                     type:'get',
                     url:'{!!URL::to('findfee')!!}',
-                    data:{'id':course_id},
+                    data:{'id': course_id},
                     dataType:'json',//return data will be json
                     success:function(data){
 
 
+
+
                         // here price is coloumn name in products table data.coln name
 
-                        a.find('#coursefee').val(data.Fee);
+                        a.find('#TotalFee').val(data.Fee);
+
+
+
+
+                    },
+                    error:function(){
+
+                    }
+                });
+
+
+            });
+
+
+
+            $(document).on('change','#FeePaid',function () {
+                var FeePaid=$(this).val();
+                console.log(FeePaid);
+                var a=$(this).parent().parent().parent().parent().parent();
+                var TotalFee = a.find('#TotalFee').val();
+                console.log(TotalFee);
+
+
+                var op="";
+                $.ajax({
+
+                    success:function(){
+
+                        var FeeDue = TotalFee - FeePaid;
+                        console.log(FeeDue);
+
+
+
+                        // here price is coloumn name in products table data.coln name
+
+                        a.find('#FeeDue').val(FeeDue);
+
+
+
 
                     },
                     error:function(){

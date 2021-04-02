@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\Hash;
 use App\Models\Admin;
 
+
 class AdminAuthController extends Controller
 {
     function adminlogin(){
         return view('AdminLogin');
     }
+
+
 
 
 
