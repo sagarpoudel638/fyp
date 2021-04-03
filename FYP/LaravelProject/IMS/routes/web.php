@@ -64,9 +64,10 @@ Route::any('edit/{user_id?}', [AdminCourseSettingsController::class, 'editCourse
 Route::any('edit_action', [AdminCourseSettingsController::class, 'editAction'])->name('editActionCourse')->middleware('isLoggedAdmin');
 
 
-
-
+Route::get('home', [UserAuthController::class, 'homedata']);
+//{{$LoggedUserInfo->firstname}}
 
 Route::get('/courseview',[RegisterStudentController::class, 'course']);
 Route::get('/findfee',[RegisterStudentController::class, 'FindFee']);
 
+Route::any('registerStudent', [RegisterStudentController::class, 'registerStudent'])->name('registerStudent')->middleware('isLogged');

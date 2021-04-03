@@ -57,20 +57,11 @@ class UserAuthController extends Controller
             return back()->with('fail','No account found for this username');
         }
     }
-    /**function homedata(){
-        if(Session()->has('LoggedUser')){
-
-            $user = Users::where('id','=', session('LoggedUser'))->first();
-            $data = [
-                'LoggedUserInfo'=> $user
-            ];
+    function homedata(){
 
 
-        }
-        return view('home',$data);
 
-
-    }**/
+    }
 
 
 
