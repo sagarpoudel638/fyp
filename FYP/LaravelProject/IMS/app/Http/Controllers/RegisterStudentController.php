@@ -53,6 +53,7 @@ class RegisterStudentController extends Controller
 
 
 
+
             ]);
             $data['StudentName'] = $request->StudentName;
             $data['Address'] = $request->Address;
@@ -73,24 +74,7 @@ class RegisterStudentController extends Controller
             }
         }
 
-        if ($request->isMethod('post')) {
-            $this->validate($request, [
-                'FeePaid' => 'required|min:1|numeric',
 
-
-            ]);
-
-
-            $data['Payment']=$request->Payment;
-
-
-
-
-
-            if (payment::create($data)) {
-                return redirect()->route('RegisterStudentDashboard')->with('success', 'Record is Inserted');
-            }
-        }
     }
 
 

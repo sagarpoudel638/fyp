@@ -57,11 +57,7 @@ class UserAuthController extends Controller
             return back()->with('fail','No account found for this username');
         }
     }
-    function homedata(){
 
-
-
-    }
 
 
 
