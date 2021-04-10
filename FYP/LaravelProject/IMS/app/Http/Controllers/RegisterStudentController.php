@@ -29,7 +29,7 @@ class RegisterStudentController extends Controller
 
     public function findFee(Request $request){
 
-		//it will get price if its id match with product id
+
 		$p=Course::select('Fee')->where('id',$request->id)->first();
 
     	return response()->json($p);
@@ -76,6 +76,10 @@ class RegisterStudentController extends Controller
 
 
     }
+
+
+
+
 
 
 

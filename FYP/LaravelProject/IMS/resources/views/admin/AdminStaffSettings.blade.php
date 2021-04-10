@@ -77,7 +77,6 @@
                 <th>S.No</th>
                 <th>Staff Name</th>
                 <th>Email</th>
-                <th>Password</th>
                 <th>Action</th>
                 <th>Create At</th>
 
@@ -89,7 +88,7 @@
                     <td>{{++$key}}</td>
                     <td>{{$staffDatum->name}}</td>
                     <td>{{$staffDatum->email}}</td>
-                    <td>Hidden</td>
+
 
 
 

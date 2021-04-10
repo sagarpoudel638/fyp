@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AdminReportsController;
 use App\Http\Controllers\AdminSettingsController;
-use App\Http\Controllers\POSController;
+
 use App\Http\Controllers\RegisterStudentController;
 use App\Http\Controllers\SMSController;
 use App\Http\Controllers\StaffSettingsController;
@@ -12,6 +12,7 @@ use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminCourseSettingsController;
 use App\Http\Controllers\AdminStaffSettingsController;
+use App\Http\Controllers\POSController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,3 +72,18 @@ Route::get('/courseview',[RegisterStudentController::class, 'course']);
 Route::get('/findfee',[RegisterStudentController::class, 'FindFee']);
 
 Route::any('registerStudent', [RegisterStudentController::class, 'registerStudent'])->name('registerStudent')->middleware('isLogged');
+
+
+
+
+Route::resource('POS', 'App\Http\Controllers\POSController');
+
+Route::post('POS/update', [POSController::class, 'update'])->name('POS.update');
+
+Route::get('POS/destroy/{id}', [POSController::class, 'destroy']);
+
+
+Route::get('/live_search_student/searchAction', [StudentDetailsController::class, 'searchAction'])->name('live_search_student.searchAction')->middleware('isLogged');
+
+
+
