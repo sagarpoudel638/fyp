@@ -32,14 +32,14 @@ use App\Http\Controllers\POSController;
 
 
 Route::any('/admin', [AdminSettingsController::class, 'AdminSettingsDashboard'])->name('adminsettings')->middleware('isLoggedAdmin');
-Route::any('/AdminSettings', [AdminSettingsController::class, 'AdminSettingsDashboard'])->middleware('isLoggedAdmin');
+Route::any('/AdminSettings', [AdminSettingsController::class, 'AdminSettingsDashboard'])->name('SettingsAdmin')->middleware('isLoggedAdmin');
 Route::any('/AdminReports', [AdminReportsController::class, 'AdminReportsDashboard'])->name('adminreports')->middleware('isLoggedAdmin');
 Route::any('/AdminStaffSettings', [AdminStaffSettingsController::class, 'AdminStaffSettingsDashboard'])->name('adminstaff')->middleware('isLoggedAdmin');
 Route::any('/AdminCourseSettings', [AdminCourseSettingsController::class, 'AdminCourseSettingsDashboard'])->name('course')->middleware('isLoggedAdmin');
 
 Route::get('/', [RegisterStudentController::class, 'RegisterStudentDashboard'])->name('RegisterStudentDashboard')->middleware('isLogged');
 Route::get('/POS', [POSController::class, 'POSDashboard'])->middleware('isLogged');
-Route::get('/StaffSettings', [StaffSettingsController::class, 'StaffSettingsDashboard'])->middleware('isLogged');
+Route::get('/StaffSettings', [StaffSettingsController::class, 'StaffSettingsDashboard'])->name('StaffSettings')->middleware('isLogged');
 Route::get('/SMS', [SMSController::class, 'SMSDashboard'])->middleware('isLogged');
 Route::get('/StudentDetails', [StudentDetailsController::class, 'StudentDetailsDashboard'])->middleware('isLogged');
 
@@ -49,13 +49,24 @@ Route::post('check', [UserAuthController::class, 'check'])->name('auth.check');
 Route::get('logout', [UserAuthController::class, 'logout'])->middleware('isLogged');
 
 
+Route::any('deleteuser/{user_id?}', [AdminStaffSettingsController::class, 'deleteUser'])->name('deleteUser')->middleware('isLoggedAdmin');
+Route::any('edituser/{user_id?}', [AdminStaffSettingsController::class, 'editUser'])->name('editUser')->middleware('isLoggedAdmin');
+Route::any('edit_action_user', [AdminStaffSettingsController::class, 'editActionUser'])->name('editActionUser')->middleware('isLoggedAdmin');
 
+
+Route::any('updatepassword/{user_id?}', [AdminStaffSettingsController::class, 'updatePassword'])->name('updatePassword')->middleware('isLoggedAdmin');
+Route::any('update_password_action', [AdminStaffSettingsController::class, 'updatePasswordAction'])->name('updatePasswordAction')->middleware('isLoggedAdmin');
+
+
+Route::any('update_adminpassword', [AdminSettingsController::class, 'updateAdminPassword'])->name('updateAdminPassword')->middleware('isLoggedAdmin');
+Route::any('update_staffpassword', [StaffSettingsController::class, 'updateStaffPassword'])->name('updateStaffPassword')->middleware('isLogged');
 
 
 
 Route::get('/adminlogin', [AdminAuthController::class, 'adminlogin']);
 Route::post('admincheck', [AdminAuthController::class, 'admincheck'])->name('admin.check');
 Route::get('logoutadmin', [AdminAuthController::class, 'adminlogout'])->middleware('isLoggedAdmin');
+
 
 
 Route::any('/edit', [AdminCourseSettingsController::class, 'editCourse'])->name('editCourse')->middleware('isLoggedAdmin');
@@ -77,9 +88,7 @@ Route::any('registerStudent', [RegisterStudentController::class, 'registerStuden
 
 
 Route::resource('POS', 'App\Http\Controllers\POSController');
-
 Route::post('POS/update', [POSController::class, 'update'])->name('POS.update');
-
 Route::get('POS/destroy/{id}', [POSController::class, 'destroy']);
 
 

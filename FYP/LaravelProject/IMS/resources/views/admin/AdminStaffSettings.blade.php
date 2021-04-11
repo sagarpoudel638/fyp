@@ -71,7 +71,7 @@
               <input type="text" placeholder="Search . . ." required>
             </div>
           </div>-->
-        <table >
+        <table style="width:100%">
             <thead>
             <tr>
                 <th>S.No</th>
@@ -93,11 +93,11 @@
 
 
                     <td>
+                        <a href="{{route('editUser').'/'.$staffDatum->id}}" class="edit">Edit</a>
 
-                        <a href="" class="edit">Edit</a>
+                        <a href="{{route('deleteUser').'/'.$staffDatum->id}}" class="delete">Delete</a>
 
-
-                        <a href="" class="delete">Delete</a>
+                        <a href="{{route('updatePassword').'/'.$staffDatum->id}}" class="edit">Update </a>
 
                     </td>
                     <td>{{$staffDatum->created_at->DiffForHumans()}} </td>

@@ -38,12 +38,8 @@
             <a href="" style="color: rgb(66, 197, 136);"> {{session('success')}}</a>
 
              @endif
-           <!-- <div class="search">
-                <div>
-                  <input type="text" placeholder="Search . . ." required>
-                </div>
-              </div>-->
-            <table >
+
+            <table>
                 <thead>
                 <tr>
                     <th>S.No</th>
