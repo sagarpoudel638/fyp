@@ -7,15 +7,24 @@
     <a href="" style="color: rgb(66, 197, 136);"> {{session('success')}}</a>
 
      @endif
-   <div class="search">
-        <div>
-          <input type="text" placeholder="Search . . ."  name="searchstudent" id="searchstudent" required>
+     <form action="{{ route('search') }}" method="GET">
+        <div class="search">
+            <div>
+              <input type="text" placeholder="Search . . ."  name="search" id="search" required>
+            </div>
+          </div>
+
+          <div class="buttons" style="">
+
+            <button type="submit" class="btn effect01"><span>Search</span></button>
+
         </div>
-      </div>
+
+    </form>
     <table  >
         <thead>
         <tr>
-
+            <th>S.N </th>
             <th>Student Name</th>
             <th>Gender</th>
             <th>Address</th>
@@ -31,8 +40,35 @@
 
         </tr>
         </thead>
-        <tbody  id="livesearch">
+        <tbody>
+            @foreach($studentdata as $key=>$studentdatum)
+            <tr>
+                <td>{{++$key}}</td>
+                <td>{{$studentdatum->StudentName}}</td>
+                <td>{{$studentdatum->Gender}}</td>
+                <td>{{$studentdatum->Address}}</td>
+                <td>{{$studentdatum->PrimaryNumber}}</td>
+                <td>{{$studentdatum->SecondaryNumber}}</td>
+                <td>{{$studentdatum->Course}}</td>
+                <td>{{$studentdatum->Fee}}</td>
+                <td>{{$studentdatum->Payment}}</td>
+                <td>{{$studentdatum->name}}</td>
 
+
+
+                <td>
+
+                    <a href="" class="edit">Edit</a>
+
+
+                    <a href="" class="delete">Delete</a>
+
+                </td>
+
+
+            </tr>
+
+        @endforeach
         </tbody>
     </table>
 
@@ -42,30 +78,6 @@
 </div>
 
 
-<script>
-    $(document).ready(function(){
-     fetch_item_data();
-     function fetch_item_data(query = '')
-     {
-      $.ajax({
-       url:"{{ route('live_search_student.searchAction') }}",
-       method:'GET',
-       data:{query:query},
-       dataType:'json',
-       success:function(studentdata)
-       {
-        $('#livesearch').html(studentdata.table_data_student);
 
-       }
-      })
-     }
-     $(document).on('keyup', '#searchstudent', function(){
-      var query = $(this).val();
-      fetch_item_data(query);
-     });
-    });
-
-
-    </script>
 
 @endsection

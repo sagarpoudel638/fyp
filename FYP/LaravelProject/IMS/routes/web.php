@@ -38,10 +38,13 @@ Route::any('/AdminStaffSettings', [AdminStaffSettingsController::class, 'AdminSt
 Route::any('/AdminCourseSettings', [AdminCourseSettingsController::class, 'AdminCourseSettingsDashboard'])->name('course')->middleware('isLoggedAdmin');
 
 Route::get('/', [RegisterStudentController::class, 'RegisterStudentDashboard'])->name('RegisterStudentDashboard')->middleware('isLogged');
-Route::get('/POS', [POSController::class, 'POSDashboard'])->middleware('isLogged');
+//Route::get('/POS', [POSController::class, 'POSDashboard'])->middleware('isLogged');
 Route::get('/StaffSettings', [StaffSettingsController::class, 'StaffSettingsDashboard'])->name('StaffSettings')->middleware('isLogged');
 Route::get('/SMS', [SMSController::class, 'SMSDashboard'])->middleware('isLogged');
 Route::get('/StudentDetails', [StudentDetailsController::class, 'StudentDetailsDashboard'])->middleware('isLogged');
+Route::get('/studentDetails/simple', [StudentDetailsController::class, 'simple'])->name('search')->middleware('isLogged');
+
+
 
 Route::get('/login', [UserAuthController::class, 'login']);
 Route::post('create', [UserAuthController::class, 'create'])->name('auth.create');
@@ -87,12 +90,14 @@ Route::any('registerStudent', [RegisterStudentController::class, 'registerStuden
 
 
 
-Route::resource('POS', 'App\Http\Controllers\POSController');
-Route::post('POS/update', [POSController::class, 'update'])->name('POS.update');
-Route::get('POS/destroy/{id}', [POSController::class, 'destroy']);
-
-
-Route::get('/live_search_student/searchAction', [StudentDetailsController::class, 'searchAction'])->name('live_search_student.searchAction')->middleware('isLogged');
 
 
 
+
+
+
+
+
+
+Route::get('/POS', [POSController::class, 'index'])->middleware('isLogged');
+Route::get('/POS/simple', [POSController::class, 'simple'])->name('simple_search')->middleware('isLogged');
