@@ -21,7 +21,7 @@
         </div>
 
     </form>
-    <table  >
+    <table  style="width:100%">
         <thead>
         <tr>
             <th>S.N </th>
@@ -40,7 +40,7 @@
 
         </tr>
         </thead>
-        <tbody>
+        <tbody style="width:100%">
             @foreach($studentdata as $key=>$studentdatum)
             <tr>
                 <td>{{++$key}}</td>
@@ -56,12 +56,11 @@
 
 
 
-                <td>
+                <td style="width:100%;">
 
-                    <a href="" class="edit">Edit</a>
-
-
-                    <a href="" class="delete">Delete</a>
+                    <a href="{{route('editStudent').'/'.$studentdatum->id}}" class="edit">Edit</a>
+                    <a href="{{route('deleteStudent').'/'.$studentdatum->id}}"  class="delete">Delete</a>
+                    <a  href="{{route('payStudent').'/'.$studentdatum->id}}" class="edit">Pay</a>
 
                 </td>
 

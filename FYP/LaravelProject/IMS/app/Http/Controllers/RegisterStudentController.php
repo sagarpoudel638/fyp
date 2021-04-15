@@ -27,13 +27,7 @@ class RegisterStudentController extends Controller
     }
 
 
-    public function findFee(Request $request){
 
-
-		$p=Course::select('Fee')->where('id',$request->id)->first();
-
-    	return response()->json($p);
-	}
 
 
     function registerStudent(Request $request)

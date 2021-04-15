@@ -38,7 +38,6 @@
                             <option>Male</option>
                             <option>Female</option>
                             <option>Other</option>
-
                         </select>
                     </label>
                 </div>
@@ -57,28 +56,7 @@
             </div>
         </div>
 
-        <div style="display:flex;border-radius: 1%; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); margin-left:100px;height:500px; margin-top:20px">
-            <div style="display:inline">
-                <h2>Fee Payment</h2>
-                <div style="display:flex; flex-direction: row-reverse">
-                  <div style="display:inline">
-                        <div class="form__group field">
-                            <input type="text"  class="form__field" id="TotalFee" placeholder="Total Fee" name="TotalFee"  disabled/>
-                            <label for="name" class="form__label">Total Fee</label>
-                        </div>
-                        <div class="form__group field">
-                            <input type="input" class="form__field" id ="FeePaid" placeholder="Fee Paid" name="Payment"  />
-                            <label for="name" class="form__label">Fee Paid</label>
-                        </div>
-                        <div class="form__group field">
-                            <input type="input" class="form__field" id ="FeeDue"placeholder="Fee Due" name="FeeDue"  disabled/>
-                            <label for="name" class="form__label">Fee Due</label>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </div>
         <div class="buttons" style="margin:50px 0px 100px 465px;">
 
             <button type="submit" class="btn effect01"><span>Register</span></button>
@@ -129,39 +107,7 @@
 
 
 
-            $(document).on('change','#FeePaid',function () {
-                var FeePaid=$(this).val();
-                console.log(FeePaid);
-                var a=$(this).parent().parent().parent().parent().parent();
-                var TotalFee = a.find('#TotalFee').val();
-                console.log(TotalFee);
 
-
-                var op="";
-                $.ajax({
-
-                    success:function(){
-
-                        var FeeDue = TotalFee - FeePaid;
-                        console.log(FeeDue);
-
-
-
-                        // here price is coloumn name in products table data.coln name
-
-                        a.find('#FeeDue').val(FeeDue);
-
-
-
-
-                    },
-                    error:function(){
-
-                    }
-                });
-
-
-            });
 
         });
     </script>

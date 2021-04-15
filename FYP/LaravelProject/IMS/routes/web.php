@@ -38,10 +38,10 @@ Route::any('/AdminStaffSettings', [AdminStaffSettingsController::class, 'AdminSt
 Route::any('/AdminCourseSettings', [AdminCourseSettingsController::class, 'AdminCourseSettingsDashboard'])->name('course')->middleware('isLoggedAdmin');
 
 Route::get('/', [RegisterStudentController::class, 'RegisterStudentDashboard'])->name('RegisterStudentDashboard')->middleware('isLogged');
-//Route::get('/POS', [POSController::class, 'POSDashboard'])->middleware('isLogged');
+Route::get('/POS', [POSController::class, 'POSDashboard'])->name('POS')->middleware('isLogged');
 Route::get('/StaffSettings', [StaffSettingsController::class, 'StaffSettingsDashboard'])->name('StaffSettings')->middleware('isLogged');
-Route::get('/SMS', [SMSController::class, 'SMSDashboard'])->middleware('isLogged');
-Route::get('/StudentDetails', [StudentDetailsController::class, 'StudentDetailsDashboard'])->middleware('isLogged');
+Route::get('/SMS', [SMSController::class, 'SMSDashboard'])->name('SMS')->middleware('isLogged');
+Route::get('/StudentDetails', [StudentDetailsController::class, 'StudentDetailsDashboard'])->name('student')->middleware('isLogged');
 Route::get('/studentDetails/simple', [StudentDetailsController::class, 'simple'])->name('search')->middleware('isLogged');
 
 
@@ -83,21 +83,29 @@ Route::get('home', [UserAuthController::class, 'homedata']);
 //{{$LoggedUserInfo->firstname}}
 
 Route::get('/courseview',[RegisterStudentController::class, 'course']);
-Route::get('/findfee',[RegisterStudentController::class, 'FindFee']);
+Route::get('/findfee',[StudentDetailsController::class, 'FindFee']);
 
 Route::any('registerStudent', [RegisterStudentController::class, 'registerStudent'])->name('registerStudent')->middleware('isLogged');
 
 
 
 
+Route::any('deletestudent/{User_id?}', [StudentDetailsController::class, 'deleteStudent'])->name('deleteStudent')->middleware('isLogged');
+Route::any('editstudent/{User_id?}', [StudentDetailsController::class, 'editStudent'])->name('editStudent')->middleware('isLogged');
+Route::any('edit_action_student', [StudentDetailsController::class, 'editActionStudentDetails'])->name('editActionStudentDetails')->middleware('isLogged');
 
 
 
 
 
 
+Route::get('/laravel_google_chart', [AdminReportsController::class, 'AdminReportsDashboard']);
 
 
 
-Route::get('/POS', [POSController::class, 'index'])->middleware('isLogged');
-Route::get('/POS/simple', [POSController::class, 'simple'])->name('simple_search')->middleware('isLogged');
+
+
+Route::any('paystudent/{User_id?}', [StudentDetailsController::class, 'payStudent'])->name('payStudent')->middleware('isLogged');
+Route::any('pay_action_student', [StudentDetailsController::class, 'payStudentAction'])->name('payStudentAction')->middleware('isLogged');
+
+

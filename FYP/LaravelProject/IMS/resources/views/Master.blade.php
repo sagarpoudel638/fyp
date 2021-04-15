@@ -87,11 +87,11 @@ setInterval(printDate, 1000);
         <h1 id="time"></h1>
     </div>
  </li>
-      <li><a href="/">Register Student</a></li>
-      <li><a href="POS">Point of Sales</a></li>
-      <li><a href="SMS">Send SMS</a></li>
-      <li><a href="StudentDetails">Student Details</a></li>
-      <li><a href="StaffSettings">Settings</a></li>
+      <li><a href="{{route('RegisterStudentDashboard')}}">Register Student</a></li>
+      <li><a href="{{route('POS')}}">Point of Sales</a></li>
+      <li><a href="{{route('SMS')}}">Send SMS</a></li>
+      <li><a href="{{route('student')}}">Student Details</a></li>
+      <li><a href="{{route('StaffSettings')}}">Settings</a></li>
     </ul>
   </div>
   @yield('container')
