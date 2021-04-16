@@ -99,9 +99,11 @@ Route::any('edit_action_student', [StudentDetailsController::class, 'editActionS
 
 
 
-Route::get('/laravel_google_chart', [AdminReportsController::class, 'AdminReportsDashboard']);
+Route::get('/adminstudentreport', [AdminReportsController::class, 'AdminStudentReportsDashboard'])->name('StudentReport')->middleware('isLoggedAdmin');
+Route::get('/adminfeereport', [AdminReportsController::class, 'AdminFeeReportsDashboard'])->name('FeeReport')->middleware('isLoggedAdmin');
 
-
+Route::get('/studentprint', [AdminReportsController::class, 'StudentReportPrint'])->name('StudentReportPrint')->middleware('isLoggedAdmin');
+Route::get('/feeprint', [AdminReportsController::class, 'FeeReportPrint'])->name('FeeReportPrint')->middleware('isLoggedAdmin');
 
 
 
