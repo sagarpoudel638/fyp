@@ -12,6 +12,7 @@ use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminCourseSettingsController;
 use App\Http\Controllers\AdminStaffSettingsController;
+use App\Http\Controllers\BookDetailsController;
 use App\Http\Controllers\POSController;
 
 /*
@@ -43,7 +44,7 @@ Route::get('/StaffSettings', [StaffSettingsController::class, 'StaffSettingsDash
 Route::get('/SMS', [SMSController::class, 'SMSDashboard'])->name('SMS')->middleware('isLogged');
 Route::get('/StudentDetails', [StudentDetailsController::class, 'StudentDetailsDashboard'])->name('student')->middleware('isLogged');
 Route::get('/studentDetails/simple', [StudentDetailsController::class, 'simple'])->name('search')->middleware('isLogged');
-
+Route::get('/BookDetails', [BookDetailsController::class, 'BookDetailsDashboard'])->name('bookDetails')->middleware('isLogged');
 
 
 Route::get('/login', [UserAuthController::class, 'login']);
@@ -94,6 +95,11 @@ Route::any('deletestudent/{User_id?}', [StudentDetailsController::class, 'delete
 Route::any('editstudent/{User_id?}', [StudentDetailsController::class, 'editStudent'])->name('editStudent')->middleware('isLogged');
 Route::any('edit_action_student', [StudentDetailsController::class, 'editActionStudentDetails'])->name('editActionStudentDetails')->middleware('isLogged');
 
+
+Route::any('registerBook', [BookDetailsController::class, 'registerBook'])->name('registerBook')->middleware('isLogged');
+
+Route::any('generatebarcode/{Book_id?}', [BookDetailsController::class, 'generatebarcode'])->name('generatebarcode')->middleware('isLogged');
+Route::any('generatebarcodeAction', [BookDetailsController::class, 'generatebarcodeAction'])->name('generatebarcodeAction')->middleware('isLogged');
 
 
 
