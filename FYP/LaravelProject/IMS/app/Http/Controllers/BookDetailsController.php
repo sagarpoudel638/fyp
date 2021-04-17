@@ -10,20 +10,12 @@ use Illuminate\Support\Facades\DB;
 class BookDetailsController extends Controller
 {
     function BookDetailsDashboard(){
-        $bookdata = DB::table('users')
-        ->select('users.name','book_details.id','book_details.BookName','book_details.Author','book_details.Publication','book_details.StockQuantity','book_details.Price')
-        ->join('book_details','users.id','book_details.user_id')->simplepaginate(10);
-        if(Session()->has('LoggedUser')){
+        $bookdata = DB::table('book_details')
+        ->select('book_details.id','book_details.BookName','book_details.Author','book_details.Publication','book_details.Price')
+        ->simplepaginate(10);
 
-            $user = Users::where('id','=', session('LoggedUser'))->first();
-            $userdata = [
-                'LoggedUserInfo'=> $user
-            ];
-
-
-        }
         //get data from table
-		return view('staff.BookDetails',$userdata,compact('bookdata'));
+		return view('staff.BookDetails',compact('bookdata'));
 
     }
 
@@ -44,7 +36,6 @@ class BookDetailsController extends Controller
                 'BookName' => 'required|min:3',
                 'Author' => 'required|min:3',
                 'Publication' => 'required|min:3',
-                'StockQuantity' => 'required|numeric',
                 'Price' => 'required|numeric',
 
 
@@ -55,9 +46,7 @@ class BookDetailsController extends Controller
             $data['Author'] = $request->Author;
             $data['Publication'] = $request->Publication;
             $data['SecondaryNumber'] = $request->SecondaryNumber;
-            $data['StockQuantity'] = $request->StockQuantity;
-            $data['Price'] = $request->Price;
-            $data['user_id']=$request->user_id;
+             $data['Price'] = $request->Price;
 
 
 

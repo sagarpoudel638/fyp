@@ -14,6 +14,8 @@ use App\Http\Controllers\AdminCourseSettingsController;
 use App\Http\Controllers\AdminStaffSettingsController;
 use App\Http\Controllers\BookDetailsController;
 use App\Http\Controllers\POSController;
+use App\Http\Controllers\CustomerDetailsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +45,7 @@ Route::get('/POS', [POSController::class, 'POSDashboard'])->name('POS')->middlew
 Route::get('/StaffSettings', [StaffSettingsController::class, 'StaffSettingsDashboard'])->name('StaffSettings')->middleware('isLogged');
 Route::get('/SMS', [SMSController::class, 'SMSDashboard'])->name('SMS')->middleware('isLogged');
 Route::get('/StudentDetails', [StudentDetailsController::class, 'StudentDetailsDashboard'])->name('student')->middleware('isLogged');
-Route::get('/studentDetails/simple', [StudentDetailsController::class, 'simple'])->name('search')->middleware('isLogged');
+Route::get('/studentDetails/simple', [StudentDetailsController::class, 'searchstudents'])->name('search')->middleware('isLogged');
 Route::get('/BookDetails', [BookDetailsController::class, 'BookDetailsDashboard'])->name('bookDetails')->middleware('isLogged');
 
 
@@ -87,16 +89,15 @@ Route::get('/courseview',[RegisterStudentController::class, 'course']);
 Route::get('/findfee',[StudentDetailsController::class, 'FindFee']);
 
 Route::any('registerStudent', [RegisterStudentController::class, 'registerStudent'])->name('registerStudent')->middleware('isLogged');
-
-
-
-
 Route::any('deletestudent/{User_id?}', [StudentDetailsController::class, 'deleteStudent'])->name('deleteStudent')->middleware('isLogged');
 Route::any('editstudent/{User_id?}', [StudentDetailsController::class, 'editStudent'])->name('editStudent')->middleware('isLogged');
 Route::any('edit_action_student', [StudentDetailsController::class, 'editActionStudentDetails'])->name('editActionStudentDetails')->middleware('isLogged');
 
 
 Route::any('registerBook', [BookDetailsController::class, 'registerBook'])->name('registerBook')->middleware('isLogged');
+
+
+
 
 Route::any('generatebarcode/{Book_id?}', [BookDetailsController::class, 'generatebarcode'])->name('generatebarcode')->middleware('isLogged');
 Route::any('generatebarcodeAction', [BookDetailsController::class, 'generatebarcodeAction'])->name('generatebarcodeAction')->middleware('isLogged');
@@ -117,3 +118,6 @@ Route::any('paystudent/{User_id?}', [StudentDetailsController::class, 'payStuden
 Route::any('pay_action_student', [StudentDetailsController::class, 'payStudentAction'])->name('payStudentAction')->middleware('isLogged');
 
 
+Route::any('registerCustomer', [CustomerDetailsController::class, 'registerCustomer'])->name('registerCustomer')->middleware('isLogged');
+Route::get('CustomerDetailsDashboard', [CustomerDetailsController::class, 'CustomerDetailsDashboard'])->name('CustomerDetailsDashboard')->middleware('isLogged');
+Route::get('/CustomerDetails/searchcustomer', [CustomerDetailsController::class, 'searchcustomer'])->name('searchcustomer')->middleware('isLogged');

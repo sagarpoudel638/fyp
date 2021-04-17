@@ -6,57 +6,7 @@
     <h2>Settings</h2>
     <form action="" method="">
     <div style="display:flex; margin-left:100px; margin-bottom:20px; border-radius: 1%; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); ">
-        <div style="display:inline">
-            <h3>Register Book</h3>
 
-                <div style="display:flex;">
-                    <div style="display:inline; margin-bottom:25px">
-                        <div class="form__group field">
-                            <input type="text" class="form__field" placeholder="Barcode" name="barcode"  required />
-                            <label for="name" class="form__label">Barcode</label>
-                            <span>@error('price'){{$message}} @enderror </span>
-                        </div>
-                        <div class="form__group field">
-                                    <input type="text" class="form__field" placeholder="Name Of Book" name="bookname"  required />
-                                    <label for="name" class="form__label">Name Of Book</label>
-                                    <span>@error('name'){{ $message}} @enderror </span>
-                        </div>
-                        <div class="form__group field">
-                                <input type="text" class="form__field" placeholder="Author" name="author"  required />
-                                <label for="name" class="form__label">Author</label>
-                                <span>@error('author'){{ $message}} @enderror </span>
-                        </div>
-                        <div class="form__group field">
-                                    <input type="text" class="form__field" placeholder="Publication" name="publication"  required />
-                                    <label for="name" class="form__label">Publication</label>
-                                    <span>@error('publication'){{ $message}} @enderror </span>
-                        </div>
-                        <div class="form__group field">
-                                    <input type="text" class="form__field" placeholder="StocksQuantity" name="stocksquantity"  required />
-                                    <label for="name" class="form__label">Stock Amount</label>
-                                    <span>@error('stockquantity'){{ $message}} @enderror </span>
-                        </div>
-                        <div class="form__group field">
-                                    <input type="text" class="form__field" placeholder="Price" name="price"  required />
-                                    <label for="name" class="form__label">Price</label>
-                                    <span>@error('price'){{$message}} @enderror </span>
-                        </div>
-
-
-
-
-                    </div>
-                    <div style="display:inline; margin:380px 25px 10px 180px ">
-                                <div class="buttons" style="margin-top:0px; height:60px">
-                                <button type="submit" class="btn effect01"><span>Register</span></button>
-                                </div>
-
-
-                    </div>
-
-
-               </div>
-         </div>
     </div>
     </form>
     <div style="display:flex; margin-left:100px; margin-bottom:20px; border-radius: 1%; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); ">

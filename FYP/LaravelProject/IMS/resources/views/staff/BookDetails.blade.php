@@ -9,8 +9,8 @@
         <div style="display:inline">
             <h3>Register Book</h3>
             <form action="{{route('registerBook')}}" method="POST">
-                <input type="hidden" name="user_id" value="{{ $LoggedUserInfo ->id }}">
-                <div style="display:flex;">
+
+                <div style="display:flex;margin-bottom:10%">
                     <div style="display:inline; margin-bottom:25px">
                         <div class="form__group field">
                                     <input type="text" class="form__field" placeholder="Name Of Book" name="BookName"  required />
@@ -26,11 +26,6 @@
                                     <input type="text" class="form__field" placeholder="Publication" name="Publication"  required />
                                     <label for="name" class="form__label">Publication</label>
                                     <span>@error('publication'){{ $message}} @enderror </span>
-                        </div>
-                        <div class="form__group field">
-                                    <input type="text" class="form__field" placeholder="StocksQuantity" name="StockQuantity"  required />
-                                    <label for="name" class="form__label">Stock Amount</label>
-                                    <span>@error('stockquantity'){{ $message}} @enderror </span>
                         </div>
                         <div class="form__group field">
                                     <input type="text" class="form__field" placeholder="Price" name="Price"  required />
@@ -60,9 +55,9 @@
                     <th>Book Name</th>
                     <th>Author</th>
                     <th>Publication</th>
-                    <th> Stock Quantity</th>
+
                     <th>Price</th>
-                    <th>Registered By </th>
+
                     <th colspan="3">Action</th>
 
 
@@ -76,9 +71,9 @@
                         <td>{{$bookdatum->BookName}}</td>
                         <td>{{$bookdatum->Author}}</td>
                         <td>{{$bookdatum->Publication}}</td>
-                        <td>{{$bookdatum->StockQuantity}}</td>
+
                         <td>{{$bookdatum->Price}}</td>
-                        <td>{{$bookdatum->name}}</td>
+
 
 
 

@@ -25,7 +25,7 @@ class StudentDetailsController extends Controller
     }
 
 
-    public function simple(Request $request)
+    public function searchstudents(Request $request)
     {
         $studentdata = DB::table('courses')
         ->select('students.StudentName','students.id','users.name','payments.Payment','students.Gender','students.Address','students.PrimaryNumber','students.SecondaryNumber','courses.Course','courses.Fee')

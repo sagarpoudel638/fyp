@@ -23,7 +23,7 @@
         <p class="price">Author: {{$book->Author}}</p>
         <p class="price">Publication: {{$book->Publication}}</p>
         <p class="price">Price: {{$book->Price}}</p>
-        {!! DNS1D::getBarcodeSVG($book->id, 'C39'); !!}
+        {!! DNS1D::getBarcodeSVG($book->id, 'C39',3,33); !!}
 
     </div>
 </body>
