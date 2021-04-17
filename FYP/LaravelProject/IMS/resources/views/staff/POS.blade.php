@@ -2,7 +2,11 @@
 @section('container')
 
 
+@foreach($customer as $customerdatum)
 
+{{$customerdatum->CustomerName}}
+
+@endforeach
 
 
 

@@ -121,3 +121,5 @@ Route::any('pay_action_student', [StudentDetailsController::class, 'payStudentAc
 Route::any('registerCustomer', [CustomerDetailsController::class, 'registerCustomer'])->name('registerCustomer')->middleware('isLogged');
 Route::get('CustomerDetailsDashboard', [CustomerDetailsController::class, 'CustomerDetailsDashboard'])->name('CustomerDetailsDashboard')->middleware('isLogged');
 Route::get('/CustomerDetails/searchcustomer', [CustomerDetailsController::class, 'searchcustomer'])->name('searchcustomer')->middleware('isLogged');
+
+Route::any('POSCustomer/{customer_id?}', [BookDetailsController::class, 'POSCustomer'])->name('POSCustomer')->middleware('isLogged');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BookDetails;
+use App\Models\CustomerDetails;
 use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -73,6 +74,17 @@ class BookDetailsController extends Controller
         $id = $request->book_id;
         $book = BookDetails::findOrFail($id);
         return view('staff.PrintBarcode')->with('book',$book);
+    }
+
+    public function POSCustomer(Request $request){
+
+
+        $id= $request->customer_id;
+        $customer = CustomerDetails::findOrFail($id);
+
+		return view('staff.POS')->with('customer',$customer);
+
+
     }
 
 
