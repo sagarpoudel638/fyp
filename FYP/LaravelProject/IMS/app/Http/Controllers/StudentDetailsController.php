@@ -16,7 +16,7 @@ class StudentDetailsController extends Controller
 
 
         $studentdata = DB::table('courses')
-        ->select('students.StudentName','students.id','users.name','payments.Payment','students.Gender','students.Address','students.PrimaryNumber','students.SecondaryNumber','courses.Course','courses.Fee')
+        ->select('students.StudentName','students.id','users.name','payments.Payment','students.Gender','students.Address','students.PrimaryNumber','students.Email','courses.Course','courses.Fee')
         ->join('students','courses.id','students.course_id')
         ->join('users','students.user_id','users.id')
         ->leftjoin('payments','students.id','payments.student_id')->simplepaginate(10);
@@ -28,7 +28,7 @@ class StudentDetailsController extends Controller
     public function searchstudents(Request $request)
     {
         $studentdata = DB::table('courses')
-        ->select('students.StudentName','students.id','users.name','payments.Payment','students.Gender','students.Address','students.PrimaryNumber','students.SecondaryNumber','courses.Course','courses.Fee')
+        ->select('students.StudentName','students.id','users.name','payments.Payment','students.Gender','students.Address','students.PrimaryNumber','students.Email','courses.Course','courses.Fee')
         ->join('students','courses.id','students.course_id')
         ->join('users','students.user_id','users.id')
         ->leftjoin('payments','students.id','payments.student_id');
@@ -66,13 +66,13 @@ class StudentDetailsController extends Controller
                 'StudentName' => 'required|min:3',
                 'Address' => 'required|min:3',
                 'PrimaryNumber' => 'required|min:3|numeric',
-                'SecondaryNumber' => 'required|min:3|numeric',
+                'Email' => 'required|Email',
 
             ]);
             $data['StudentName'] = $request->StudentName;
             $data['Address'] = $request->Address;
             $data['PrimaryNumber'] = $request->PrimaryNumber;
-            $data['SecondaryNumber'] = $request->SecondaryNumber;
+            $data['Email'] = $request->Email;
             $id = $request->User_id;
 
             if(student::where('id',$id)->update($data)){

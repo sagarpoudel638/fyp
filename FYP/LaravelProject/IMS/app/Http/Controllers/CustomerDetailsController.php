@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CustomerDetails;
+use App\Models\OrderDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -67,5 +68,18 @@ class CustomerDetailsController extends Controller
         }
         $customerData = $customerData->paginate(10);
         return view('Staff.CustomerDetails', compact('customerData'));
+    }
+
+    public function POSCustomer(Request $request){
+
+
+        $id= $request->customer_id;
+        $customer = CustomerDetails::findOrFail($id);
+
+
+
+		return view('staff.POS',compact('customer'));
+
+
     }
 }

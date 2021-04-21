@@ -29,7 +29,7 @@
             <th>Gender</th>
             <th>Address</th>
             <th>Primary Number</th>
-            <th>Secondary Number</th>
+            <th>Email</th>
             <th>Course Enrolled</th>
             <th>TotalFee</th>
             <th>Fee Paid</th>
@@ -48,7 +48,7 @@
                 <td>{{$studentdatum->Gender}}</td>
                 <td>{{$studentdatum->Address}}</td>
                 <td>{{$studentdatum->PrimaryNumber}}</td>
-                <td>{{$studentdatum->SecondaryNumber}}</td>
+                <td>{{$studentdatum->Email}}</td>
                 <td>{{$studentdatum->Course}}</td>
                 <td>{{$studentdatum->Fee}}</td>
                 <td>{{$studentdatum->Payment}}</td>

@@ -76,16 +76,7 @@ class BookDetailsController extends Controller
         return view('staff.PrintBarcode')->with('book',$book);
     }
 
-    public function POSCustomer(Request $request){
 
-
-        $id= $request->customer_id;
-        $customer = CustomerDetails::findOrFail($id);
-
-		return view('staff.POS')->with('customer',$customer);
-
-
-    }
 
 
 }

@@ -26,8 +26,8 @@
                 </div>
 
                 <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Secondary Number" name="SecondaryNumber" value="{{$editstudent->SecondaryNumber}}" />
-                    <label for="name" class="form__label">Secondary Number</label>
+                    <input type="input" class="form__field" placeholder="Email " name="Email" value="{{$editstudent->Email}}" />
+                    <label for="name" class="form__label">Email </label>
                 </div>
             </div>
 

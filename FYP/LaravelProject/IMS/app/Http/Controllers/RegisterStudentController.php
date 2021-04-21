@@ -43,7 +43,7 @@ class RegisterStudentController extends Controller
                 'StudentName' => 'required|min:3',
                 'Address' => 'required|min:3',
                 'PrimaryNumber' => 'required|min:3|numeric',
-                'SecondaryNumber' => 'required|min:3|numeric',
+                'Email' => 'required|email',
 
 
 
@@ -52,7 +52,7 @@ class RegisterStudentController extends Controller
             $data['StudentName'] = $request->StudentName;
             $data['Address'] = $request->Address;
             $data['PrimaryNumber'] = $request->PrimaryNumber;
-            $data['SecondaryNumber'] = $request->SecondaryNumber;
+            $data['Email'] = $request->Email;
             $data['Gender'] = $request->gender;
             $data['course_id'] = $request->course;
             $data['user_id']=$request->user_id;

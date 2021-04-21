@@ -18,7 +18,7 @@ class CreateStudentsTable extends Migration
             $table->string('StudentName');
             $table->string('Address');
             $table->string('PrimaryNumber');
-            $table->string('SecondaryNumber');
+            $table->string('Email');
             $table->string('Gender');
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('course_id')->constrained('courses');

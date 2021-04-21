@@ -72,7 +72,7 @@
 
                     <a href="" class="edit">Edit</a>
                     <a href=""  class="delete">Delete</a>
-                    <a href="{{route('POSCustomer').'/'.$customerdatum->id}}"  class="edit">Select</a>
+                    <a href="{{route('POSCustomer').'/'.$customerdatum->id}}" class="edit">Select Customer</a>
 
 
                 </td>
