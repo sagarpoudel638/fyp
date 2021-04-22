@@ -1,6 +1,6 @@
 @extends('master')
 @section('container')
-<div style="display:inlinr;border-radius: 1%; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); margin-left:300px; height:100%; margin-top:20px; width:700px">
+<div style="display:inline;border-radius: 1%; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); margin-left:300px; height:100%; margin-top:20px; width:700px">
 
         <h2 style="margin-left: 37%">Fee Payment</h2>
         <form action="{{route('payStudentAction')}}" method="post">
@@ -128,4 +128,6 @@ $(document).on('change','#FeePaid',function () {
 
             });
 </script>
+
+
 @endsection

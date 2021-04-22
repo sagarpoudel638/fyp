@@ -108,10 +108,10 @@ Route::any('generatebarcodeAction', [BookDetailsController::class, 'generatebarc
 
 Route::get('/adminstudentreport', [AdminReportsController::class, 'AdminStudentReportsDashboard'])->name('StudentReport')->middleware('isLoggedAdmin');
 Route::get('/adminfeereport', [AdminReportsController::class, 'AdminFeeReportsDashboard'])->name('FeeReport')->middleware('isLoggedAdmin');
-
+Route::get('/adminsalesreport', [AdminReportsController::class, 'AdminSalesReportsDashboard'])->name('SalesReport')->middleware('isLoggedAdmin');
 Route::get('/studentprint', [AdminReportsController::class, 'StudentReportPrint'])->name('StudentReportPrint')->middleware('isLoggedAdmin');
 Route::get('/feeprint', [AdminReportsController::class, 'FeeReportPrint'])->name('FeeReportPrint')->middleware('isLoggedAdmin');
-
+Route::get('/salesprint', [AdminReportsController::class, 'SalesReportPrint'])->name('SalesReportPrint')->middleware('isLoggedAdmin');
 
 
 Route::any('paystudent/{User_id?}', [StudentDetailsController::class, 'payStudent'])->name('payStudent')->middleware('isLogged');
@@ -133,3 +133,6 @@ Route::get('/MakeOrder/SearchBooks', [POSController::class, 'searchbooks'])->nam
 
 
 Route::any('AddOrder', [POSController::class, 'AddOrder'])->name('AddOrder')->middleware('isLogged');
+Route::any('DeleteOrder', [POSController::class, 'DeleteOrder'])->name('DeleteOrder')->middleware('isLogged');
+Route::any('AddTotal', [POSController::class, 'AddTotal'])->name('AddTotal')->middleware('isLogged');
+Route::any('PrintReceipt', [StudentDetailsController::class, 'PrintReceipt'])->name('PrintReceipt')->middleware('isLogged');

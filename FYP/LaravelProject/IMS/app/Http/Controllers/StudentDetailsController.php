@@ -16,10 +16,14 @@ class StudentDetailsController extends Controller
 
 
         $studentdata = DB::table('courses')
-        ->select('students.StudentName','students.id','users.name','payments.Payment','students.Gender','students.Address','students.PrimaryNumber','students.Email','courses.Course','courses.Fee')
+        ->select('students.StudentName','students.id','payments.Payment','students.Gender','users.name','students.Address','students.PrimaryNumber','students.Email','courses.Course','courses.Fee')
         ->join('students','courses.id','students.course_id')
         ->join('users','students.user_id','users.id')
-        ->leftjoin('payments','students.id','payments.student_id')->simplepaginate(10);
+        ->leftjoin('payments','students.id','payments.student_id')
+
+        ->simplePaginate(10);
+
+;
         return view('Staff.StudentDetails', compact('studentdata'));
 
     }
@@ -28,14 +32,17 @@ class StudentDetailsController extends Controller
     public function searchstudents(Request $request)
     {
         $studentdata = DB::table('courses')
-        ->select('students.StudentName','students.id','users.name','payments.Payment','students.Gender','students.Address','students.PrimaryNumber','students.Email','courses.Course','courses.Fee')
+        ->select('students.StudentName','students.id','students.Gender','payments.Payment','users.name','students.Address','students.PrimaryNumber','students.Email','courses.Course','courses.Fee')
         ->join('students','courses.id','students.course_id')
         ->join('users','students.user_id','users.id')
         ->leftjoin('payments','students.id','payments.student_id');
+
+
         if( $request->input('search')){
             $studentdata = $studentdata->where('StudentName', 'LIKE', "%" . $request->search . "%");
         }
         $studentdata = $studentdata->paginate(10);
+
         return view('Staff.StudentDetails', compact('studentdata'));
     }
 
@@ -109,10 +116,20 @@ class StudentDetailsController extends Controller
             ]);
             $data['Payment'] = $request->Payment;
             $data['student_id'] = $request->student_id;
-            $id = $request->student_id;
+
+
 
             if (payment::create($data)) {
-                return redirect()->route('student')->with('success', 'Record is Inserted');
+
+                $id = payment::latest()->first()->id;
+                $studentdata = DB::table('courses')
+    ->select('students.StudentName','students.id','users.name','payments.Payment','students.Address','students.PrimaryNumber','students.Email','courses.Course','courses.Fee')
+    ->join('students','courses.id','students.course_id')
+    ->join('users','students.user_id','users.id')
+    ->leftjoin('payments','students.id','payments.student_id')
+    ->where('payments.id',$id)
+    ->simplepaginate(10);
+    return view('Staff.PrintStudentReciept', compact('studentdata'));
             }
         }
     }

@@ -18,8 +18,16 @@ class AdminReportsController extends Controller
          DB::raw('SUM(payments.Payment) as TotalPayment'),)
         ->get();
 
+        $TotalCustomer = DB::table('customer_details')
+        ->select(
+         DB::raw('count(*) as TotalCustomer'),)
+        ->get();
 
-      return view('admin.AdminReports')->with (compact('studentdata', 'paymentdata'));
+        $TotalSales = DB::table('order_details')
+        ->select(
+         DB::raw('SUM(order_details.AmountPaid) as TotalSales'),)
+        ->get();
+      return view('admin.AdminReports')->with (compact('studentdata', 'paymentdata','TotalCustomer','TotalSales'));
      }
 
      function AdminStudentReportsDashboard(){
@@ -68,6 +76,27 @@ class AdminReportsController extends Controller
      }
 
 
+function AdminSalesReportsDashboard(){
+        $data = DB::table('order_details')
+        ->select(
+
+        DB::raw('updated_at as Date '),
+         DB::raw('SUM(order_details.AmountPaid) as TotalSales '),)
+
+
+        ->groupBy('Date')
+        ->get();
+      $array[] = ['Date', 'TotalSales'];
+      foreach($data as $key => $value)
+      {
+       $array[++$key] = [$value->Date, $value->TotalSales];
+      }
+
+
+
+      return view('admin.AdminSalesReport')->with('Sales', json_encode($array));
+     }
+
      public function StudentReportPrint()
      {
         $students = DB::table('courses')
@@ -98,6 +127,21 @@ class AdminReportsController extends Controller
            return view('admin.FeeReportPrint')->with('fee', $fee);;
      }
 
+
+     public function SalesReportPrint()
+     {
+        $sales = DB::table('order_details')
+        ->select(
+
+        DB::raw('updated_at as Date '),
+         DB::raw('SUM(order_details.AmountPaid) as TotalSales '),)
+
+
+        ->groupBy('Date')
+        ->get();
+
+           return view('admin.SalesReportPrint')->with('TotalSales', $sales);;
+     }
 
     }
 

@@ -89,7 +89,6 @@ setInterval(printDate, 1000);
     </div>
  </li>
       <li><a href="{{route('RegisterStudentDashboard')}}">Register Student</a></li>
-      <li><a href="{{route('SMS')}}">Send SMS</a></li>
       <li><a href="{{route('student')}}">Student Details</a></li>
       <li><a href="{{route('bookDetails')}}">Book Details</a></li>
       <li><a href="{{route('CustomerDetailsDashboard')}}">Customer Details</a></li>
