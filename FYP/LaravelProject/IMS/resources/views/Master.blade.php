@@ -28,8 +28,9 @@
 <header>
     <div class="flex-head">
 
-        <!--<img src="../../images/logo.png" style=" height:100px; width:100px;" alt="logo">-->
-        <div class = "title">IMS</div>
+
+        <img src="{{ asset('logo.svg') }}" style=" height:120px; width:120px;margin-bottom:10%;margin-left:55px;" alt="logo"/>
+        <div class = "title" style="margin-left:25%;">Institute Management System</div>
         <!--<div class = "userdesc">Name of user</div>-->
     </div>
 

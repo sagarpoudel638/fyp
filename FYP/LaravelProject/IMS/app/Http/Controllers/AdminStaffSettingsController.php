@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use \Illuminate\Support\Facades\Hash;
 use App\Models\Users;
 use Illuminate\Http\Request;
+use Exception;
 
 class AdminStaffSettingsController extends Controller
 {
@@ -15,10 +16,15 @@ class AdminStaffSettingsController extends Controller
 
     public function deleteUser(Request $request)
     {
-        $id = $request->user_id;
-        if(Users::findOrFail($id)->delete()){
-            return redirect()->route('adminstaff')->with('success', 'Record is Deleted');
+        try{
+            $id = $request->user_id;
+            if(Users::findOrFail($id)->delete()){
+                return redirect()->route('adminstaff')->with('success', 'Record is Deleted');
+            }
         }
+        catch (Exception $e ){
+            return redirect()->back()->with('fail','Unable to DELETE : User data exists on other Table');}
+
     }
 
 

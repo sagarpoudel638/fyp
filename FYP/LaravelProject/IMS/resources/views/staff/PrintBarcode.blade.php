@@ -39,7 +39,7 @@
 
 <script type="text/javascript">
 $("a.btn").on('click',function () {
-    $("#barcode").print();
+    $(".barcode").print();
 });
 </script>
 </body>

@@ -4,30 +4,45 @@
 
 
     <div style="display:inline; height:100%;">
+        @if (Session::get('success'))
+    <div id="successtoast">
+        {{Session::get('success')}}
+     </div>
+    @endif
+    @if (Session::get('fail'))
+    <div id="failtoast">
+        {{Session::get('fail')}}
+     </div>
+    @endif
         <div style="display:flex;border-radius: 1%; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); margin-left:100px;height:500px; margin-top:20px; width:1150px">
+
             <div style="display:inline">
                 <h2>Registration</h2>
                 <form action="{{route('registerStudent')}}" method="post">
                 <input type="hidden" name="user_id" value="{{ $LoggedUserInfo ->id }}">
 
                 <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Student Full name" name="StudentName"  required />
+                    <input type="input" class="form__field" placeholder="Student Full name" name="StudentName"  />
                     <label for="name" class="form__label">Student Full Name</label>
+                    <span class="text-danger" style="color: Red"> @error('StudentName')* {{ $message}} @enderror </span>
                 </div>
 
                 <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Address" name="Address" required />
+                    <input type="input" class="form__field" placeholder="Address" name="Address"  />
                     <label for="name" class="form__label">Address</label>
+                    <span class="text-danger" style="color: Red"> @error('Address')* {{ $message}} @enderror </span>
                 </div>
 
                 <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Primary Number" name="PrimaryNumber" required />
+                    <input type="input" class="form__field" placeholder="Primary Number" name="PrimaryNumber"  />
                     <label for="name" class="form__label">Primary Number</label>
+                    <span class="text-danger" style="color: Red"> @error('PrimaryNumber')* {{ $message}} @enderror </span>
                 </div>
 
-                <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Email " name="Email" required />
+                <div class="form__group field" style="margin-bottom:20%">
+                    <input type="input" class="form__field" placeholder="Email " name="Email"  />
                     <label for="name" class="form__label">Email</label>
+                    <span class="text-danger" style="color: Red;"> @error('Email')* {{ $message}} @enderror </span>
                 </div>
             </div>
             <div style="display:inline; margin-left:200px; margin-top:50px;">

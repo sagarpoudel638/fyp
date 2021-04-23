@@ -6,23 +6,37 @@
 
 </head>
 <body>
+    @if (Session::get('success'))
+    <div id="successtoast">
+        {{Session::get('success')}}
+     </div>
+    @endif
+    @if (Session::get('fail'))
+    <div id="failtoast">
+        {{Session::get('fail')}}
+     </div>
+    @endif
+
     <form action="{{route('auth.check')}}" method="post" class="login">
     @csrf
         <center><h2>Institute Management System</h2></center>
-        @if (Session::get('success'))
-        {{Session::get('success')}}
-        @endif
-        @if (Session::get('fail'))
-        {{Session::get('fail')}}
-        @endif
+
 
 
 
         <input type="text" name="email" placeholder="Email">
-        <span class="text-danger">@error('email'){{$message}}@enderror</span>
+        <span class="text-danger">@error('email')
+            <div id="failtoast">
+            {{$message}}
+         </div>@enderror
+        </span>
 
         <input type="password" name="password" placeholder="Password">
-        <span class="text-danger">@error('password'){{$message}}@enderror</span>
+        <span class="text-danger">@error('password')
+            <div id="failtoast">
+            {{$message}}
+         </div>@enderror
+        </span>
         <button type="submit">Sign In</button>
     </form>
 </body>

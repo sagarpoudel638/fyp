@@ -16,10 +16,12 @@ class StudentDetailsController extends Controller
 
 
         $studentdata = DB::table('courses')
-        ->select('students.StudentName','students.id','payments.Payment','students.Gender','users.name','students.Address','students.PrimaryNumber','students.Email','courses.Course','courses.Fee')
+        ->select(DB::raw('SUM(payments.Payment) as Payment'),'students.StudentName','students.id','students.Gender','users.name','students.Address','students.PrimaryNumber','students.Email','courses.Course','courses.Fee')
         ->join('students','courses.id','students.course_id')
         ->join('users','students.user_id','users.id')
         ->leftjoin('payments','students.id','payments.student_id')
+
+        ->groupBy('students.StudentName')
 
         ->simplePaginate(10);
 
@@ -32,10 +34,12 @@ class StudentDetailsController extends Controller
     public function searchstudents(Request $request)
     {
         $studentdata = DB::table('courses')
-        ->select('students.StudentName','students.id','students.Gender','payments.Payment','users.name','students.Address','students.PrimaryNumber','students.Email','courses.Course','courses.Fee')
+        ->select(DB::raw('SUM(payments.Payment) as Payment'),'students.StudentName','students.id','students.Gender','users.name','students.Address','students.PrimaryNumber','students.Email','courses.Course','courses.Fee')
         ->join('students','courses.id','students.course_id')
         ->join('users','students.user_id','users.id')
-        ->leftjoin('payments','students.id','payments.student_id');
+        ->leftjoin('payments','students.id','payments.student_id')
+
+        ->groupBy('students.StudentName');
 
 
         if( $request->input('search')){
@@ -51,9 +55,14 @@ class StudentDetailsController extends Controller
     public function deleteStudent(Request $request)
     {
         $id = $request->User_id;
-        if(student::findOrFail($id)->delete()){
-            return redirect()->route('student')->with('success', 'Record is Deleted');
+        if( payment::where('student_id', $id)->firstOrFail()->delete()){
+            $id = $request->User_id;
+            if(student::findOrFail($id)->delete()){
+
+                return redirect()->route('student')->with('success', 'Record is Deleted');
+            }
         }
+
     }
 
     public function editStudent(Request $request){

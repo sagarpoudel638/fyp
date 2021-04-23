@@ -1,14 +1,19 @@
 @extends('master')
 @section('container')
+@if (Session::get('success'))
+<div id="successtoast">
+    {{Session::get('success')}}
+ </div>
+@endif
+@if (Session::get('fail'))
+<div id="failtoast">
+    {{Session::get('fail')}}
+ </div>
+@endif
+<div class="tablecontainer" style="margin:0px;width:100%">
 
-<div class="tablecontainer" style="margin:0px;">
-    @if (session('success'))
-
-    <a href="" style="color: rgb(66, 197, 136);"> {{session('success')}}</a>
-
-     @endif
      <form action="{{ route('search') }}" method="GET">
-        <div class="search">
+        <div class="search" style="margin:5% 0 0 43%">
             <div>
               <input type="text" placeholder="Search . . ."  name="search" id="search" required>
             </div>
@@ -33,8 +38,8 @@
             <th>Course Enrolled</th>
             <th>TotalFee</th>
             <th>Fee Paid</th>
-            <th>Registered By </th>
-            <th colspan="3">Action</th>
+
+            <th colspan="2">Action</th>
 
 
 
@@ -52,15 +57,15 @@
                 <td>{{$studentdatum->Course}}</td>
                 <td>{{$studentdatum->Fee}}</td>
                 <td>{{$studentdatum->Payment}}</td>
-                <td>{{$studentdatum->name}}</td>
 
 
 
-                <td style="width:100%;">
 
-                    <a href="{{route('editStudent').'/'.$studentdatum->id}}" class="edit">Edit</a>
-                    <a href="{{route('deleteStudent').'/'.$studentdatum->id}}"  class="delete">Delete</a>
-                    <a  href="{{route('payStudent').'/'.$studentdatum->id}}" class="edit">Pay</a>
+                <td style="width:100%;" colspan="6">
+
+                    <a style ="width:100%" href="{{route('editStudent').'/'.$studentdatum->id}}" class="edit">Edit</a>
+                    <a style ="width:100%" href="{{route('deleteStudent').'/'.$studentdatum->id}}"  class="delete">Delete</a>
+                    <a  style ="width:100%" href="{{route('payStudent').'/'.$studentdatum->id}}" class="edit">Pay</a>
 
                 </td>
 
@@ -70,7 +75,7 @@
         @endforeach
         </tbody>
     </table>
-
+    {{$studentdata->links()}}
 
 
 

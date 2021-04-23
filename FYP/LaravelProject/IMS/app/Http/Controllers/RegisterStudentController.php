@@ -64,7 +64,7 @@ class RegisterStudentController extends Controller
 
 
             if (student::create($data)) {
-                return redirect()->route('RegisterStudentDashboard')->with('success', 'Record is Inserted');
+                return redirect()->route('RegisterStudentDashboard')->with('success', 'Student Registered Successfully');
             }
         }
 

@@ -29,7 +29,7 @@ class UserAuthController extends Controller
         $query = $user->save();
 
         if ($query){
-            return back()->with('Success','You have been registered');
+            return back()->with('success','You have been registered');
 
         }
         else{return back()->with('fail','Error Occured');}

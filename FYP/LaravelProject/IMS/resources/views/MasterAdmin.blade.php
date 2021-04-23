@@ -29,9 +29,10 @@
 <header>
     <div class="flex-head">
 
-        <!--<img src="../../images/logo.png" style=" height:100px; width:100px;" alt="logo">-->
-        <div class = "title">IMS Admin Panel</div>
-       <!-- <div class = "userdesc">Name of user</div>-->
+        <img src="{{ asset('logo.svg') }}" style=" height:120px; width:120px;margin-bottom:10%;margin-left:55px;" alt="logo"/>
+        <div class = "title" style="margin-left:25%;">Institute Management System </div>
+
+
     </div>
 
 </header>
@@ -92,7 +93,7 @@ setInterval(printDate, 1000);
       <li><a href="{{route('adminreports')}}">Reports</a></li>
       <li><a href="{{route('adminstaff')}}">Staff Settings</a></li>
       <li><a href="{{route('course')}}">Course Settings</a></li>
-      <li><a href="{{route('adminsettings')}}">Settings</a></li>
+      <li><a href="{{route('SettingsAdmin')}}">Settings</a></li>
 
     </ul>
   </div>

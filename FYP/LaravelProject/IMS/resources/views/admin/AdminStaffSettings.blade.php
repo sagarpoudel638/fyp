@@ -3,43 +3,48 @@
 
 <div style="display:inline;margin-left:200px">
     <div style="display:flex;">
-    <h2>Settings</h2>
+    <h2 style="margin-left:45%">Settings</h2>
 
 
     </div>
+    @if (Session::get('success'))
+    <div id="successtoast">
+        {{Session::get('success')}}
+     </div>
+    @endif
+    @if (Session::get('fail'))
+    <div id="failtoast">
+        {{Session::get('fail')}}
+     </div>
+    @endif
 
     <form action="{{route('auth.create')}}" method="post">
     <div style="display:flex; margin-left:100px; margin-bottom:20px; border-radius: 1%; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); ">
         <div style="display:inline">
-            <h3>Staff</h3>
+            <h3 style="margin-left:40%">Add Staff</h3>
             @csrf
-            @if (Session::get('success'))
-        {{Session::get('success')}}
-        @endif
-        @if (Session::get('fail'))
-        {{Session::get('fail')}}
-        @endif
+
                 <div style="display:flex;">
                     <div style="display:inline">
                         <div class="form__group field">
-                                    <input type="text" class="form__field" placeholder="Name Of User" name="name"  required />
+                                    <input type="text" class="form__field" placeholder="Name Of User" name="name"   />
                                     <label for="name" class="form__label">Name Of User</label>
-                                    <span class="text-danger">@error('name'){{ $message}} @enderror </span>
+                                    <span class="text-danger" style="color: Red"> @error('name')* {{ $message}} @enderror </span>
                         </div>
                         <div class="form__group field">
-                                <input type="text" class="form__field" placeholder="Email" name="email"  required />
+                                <input type="text" class="form__field" placeholder="Email" name="email"   />
                                 <label for="name" class="form__label">Email</label>
-                                <span class="text-danger">@error('email'){{ $message}} @enderror </span>
+                                <span class="text-danger" style="color: Red">  @error('email')* {{ $message}} @enderror </span>
                         </div>
                         <div class="form__group field">
-                                    <input type="password" class="form__field" placeholder="Create Password" name="password"  required />
+                                    <input type="password" class="form__field" placeholder="Create Password" name="password"   />
                                     <label for="name" class="form__label">Create Password</label>
-                                    <span class="text-danger">@error('password'){{ $message}} @enderror </span>
+                                    <span class="text-danger" style="color: Red"> @error('password')* {{ $message}} @enderror </span>
                         </div>
-                        <div class="form__group field">
-                                    <input type="password" class="form__field" placeholder="Confirm Password" name="password_confirmation"  required />
+                        <div class="form__group field" style="margin-bottom:5%">
+                                    <input type="password" class="form__field" placeholder="Confirm Password" name="password_confirmation"   />
                                     <label for="name" class="form__label">Confirm Password</label>
-                                    <span class="text-danger">@error('password_confirmation'){{ $message}} @enderror </span>
+                                    <span class="text-danger" style="color: Red"> @error('password_confirmation') * {{ $message}} @enderror </span>
                         </div>
 
                     </div>
@@ -61,11 +66,7 @@
     <div class="tablecontainer" style="	margin-top: 20%;
     margin-left: 0%;
     margin-bottom: 10%;">
-        @if (session('success'))
 
-        <a href="" style="color: rgb(66, 197, 136);"> {{session('success')}}</a>
-
-         @endif
        <!-- <div class="search">
             <div>
               <input type="text" placeholder="Search . . ." required>

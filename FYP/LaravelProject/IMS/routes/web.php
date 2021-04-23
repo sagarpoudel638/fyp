@@ -34,7 +34,7 @@ use App\Http\Controllers\CustomerDetailsController;
 
 
 
-Route::any('/admin', [AdminSettingsController::class, 'AdminSettingsDashboard'])->name('adminsettings')->middleware('isLoggedAdmin');
+Route::any('/admin', [AdminReportsController::class, 'AdminReportsDashboard'])->name('adminsettings')->middleware('isLoggedAdmin');
 Route::any('/AdminSettings', [AdminSettingsController::class, 'AdminSettingsDashboard'])->name('SettingsAdmin')->middleware('isLoggedAdmin');
 Route::any('/AdminReports', [AdminReportsController::class, 'AdminReportsDashboard'])->name('adminreports')->middleware('isLoggedAdmin');
 Route::any('/AdminStaffSettings', [AdminStaffSettingsController::class, 'AdminStaffSettingsDashboard'])->name('adminstaff')->middleware('isLoggedAdmin');
@@ -95,7 +95,9 @@ Route::any('edit_action_student', [StudentDetailsController::class, 'editActionS
 
 
 Route::any('registerBook', [BookDetailsController::class, 'registerBook'])->name('registerBook')->middleware('isLogged');
-
+Route::any('deletebook/{User_id?}', [BookDetailsController::class, 'deleteBook'])->name('deleteBook')->middleware('isLogged');
+Route::any('editbook/{User_id?}', [BookDetailsController::class, 'editBook'])->name('editBook')->middleware('isLogged');
+Route::any('edit_action_book', [BookDetailsController::class, 'editActionBook'])->name('editActionBook')->middleware('isLogged');
 
 
 
@@ -121,6 +123,11 @@ Route::any('pay_action_student', [StudentDetailsController::class, 'payStudentAc
 Route::any('registerCustomer', [CustomerDetailsController::class, 'registerCustomer'])->name('registerCustomer')->middleware('isLogged');
 Route::get('CustomerDetailsDashboard', [CustomerDetailsController::class, 'CustomerDetailsDashboard'])->name('CustomerDetailsDashboard')->middleware('isLogged');
 Route::get('/CustomerDetails/searchcustomer', [CustomerDetailsController::class, 'searchcustomer'])->name('searchcustomer')->middleware('isLogged');
+Route::any('deletecustomer/{User_id?}', [CustomerDetailsController::class, 'deleteCustomer'])->name('deleteCustomer')->middleware('isLogged');
+Route::any('editcustomer/{User_id?}', [CustomerDetailsController::class, 'editCustomer'])->name('editCustomer')->middleware('isLogged');
+Route::any('edit_action_customer', [CustomerDetailsController::class, 'editActionCustomer'])->name('editActionCustomer')->middleware('isLogged');
+
+
 
 Route::any('POSCustomer/{customer_id?}', [CustomerDetailsController::class, 'POSCustomer'])->name('POSCustomer')->middleware('isLogged');
 

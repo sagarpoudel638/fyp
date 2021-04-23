@@ -18,6 +18,7 @@
 
 </form>
 <form id ="AddOrder" action="{{ route('AddOrder') }}" method="POST">
+    <h2 style="margin-left:45%">Available Books</h2>
 <table  style="width:100%">
     <thead>
     <tr>
@@ -68,7 +69,8 @@
 
 
 
-<div>
+<div >
+    <h2 style="margin-left:45%">Your Orders</h2>
 <table  style="width:100%">
     <thead>
     <tr>

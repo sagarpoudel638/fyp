@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use Yajra\DataTables\DataTables;
+use Exception;
 
 class AdminCourseSettingsController extends Controller
 {
@@ -46,11 +47,13 @@ class AdminCourseSettingsController extends Controller
     }
 
     public function deleteCourse(Request $request)
-    {
+    {try{
         $id = $request->user_id;
         if(Course::findOrFail($id)->delete()){
             return redirect()->route('course')->with('success', 'Record is Deleted');
-        }
+        }}
+        catch (Exception $e ){
+            return redirect()->back()->with('fail','Unable to DELETE : Course Already been Enrolled to Student');}
     }
 
     public function editCourse(Request $request){

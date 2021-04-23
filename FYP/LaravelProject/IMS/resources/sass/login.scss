@@ -25,7 +25,7 @@ body {
    transform: translate(-50%, -50%);
    transition: transform 300ms, box-shadow 300ms;
   box-shadow: 5px 10px 10px rgba($greenSeaweed, 0.2);
-  
+
   &::before, &::after {
     content: '';
     position: absolute;
@@ -37,21 +37,21 @@ body {
     border-bottom-right-radius: 40%;
     z-index: -1;
   }
-  
+
   &::before {
     left: 50%;
     bottom: -130%;
     background-color: rgba($blueQueen, 0.15);
     animation: wawes 6s infinite linear;
   }
-  
+
   &::after {
     left: 40%;
     bottom: -125%;
     background-color: rgba($greenSeaweed, 0.2);
     animation: wawes 7s infinite;
   }
-  
+
   > input {
     font-family: $fontAsap;
     display: block;
@@ -63,7 +63,7 @@ body {
     padding: 10px 10px;
     margin: 15px -10px;
   }
-  
+
   > button {
     font-family: $fontAsap;
     cursor: pointer;
@@ -78,7 +78,7 @@ body {
     border-radius: 5px;
     background-color: $redFire;
      transition:background-color 300ms;
-    
+
     &:hover {
       background-color: darken($redFire, 50%);
     }
@@ -90,3 +90,38 @@ body {
   to { transform:rotate(360deg); }
 }
 
+#successtoast {
+
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: green;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-family: monospace;
+    display: inline-flex;
+    line-height: 12px
+  }
+
+  #failtoast {
+
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-family: monospace;
+    display: inline-flex;
+    line-height: 12px
+  }

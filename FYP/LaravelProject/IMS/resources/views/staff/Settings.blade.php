@@ -4,6 +4,16 @@
 <div style="display:inline;margin-left:200px">
 
     <h2>Settings</h2>
+    @if (Session::get('success'))
+    <div id="successtoast">
+        {{Session::get('success')}}
+     </div>
+    @endif
+    @if (Session::get('fail'))
+    <div id="failtoast">
+        {{Session::get('fail')}}
+     </div>
+    @endif
     <form action="" method="">
     <div style="display:flex; margin-left:100px; margin-bottom:20px; border-radius: 1%; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); ">
 
@@ -14,26 +24,24 @@
             <h3>Update Password</h3>
             <form action="{{route('updateStaffPassword')}}" method="post">
             @csrf
-            @if (Session::get('success'))
-        {{Session::get('success')}}
-        @endif
-        @if (Session::get('fail'))
-        {{Session::get('fail')}}
-        @endif
+
                 <div style="display:flex;">
                     <div style="display:inline">
                         <div class="form__group field">
                                 <input type="password" class="form__field" placeholder="Old Password" name="OldPassword"  required />
                                 <label for="name" class="form__label">Old Password</label>
+                                <span class="text-danger" style="color: Red"> @error('OldPassword')* {{ $message}} @enderror </span>
                         </div>
                         <input type="hidden" name="user_id" value="{{ $LoggedUserInfo ->id }}">
                         <div class="form__group field">
                                     <input type="password" class="form__field" placeholder="New Password" name="NewPassword"  required />
                                     <label for="name" class="form__label">New Password</label>
+                                    <span class="text-danger" style="color: Red"> @error('NewPassword')* {{ $message}} @enderror </span>
                         </div>
                         <div class="form__group field">
                                     <input type="password" class="form__field" placeholder="Confirm New Password" name="ConfirmNewPassword"  required />
                                     <label for="name" class="form__label">Confirm New Password</label>
+                                    <span class="text-danger" style="color: Red"> @error('ConfirmNewPassword')* {{ $message}} @enderror </span>
                         </div>
 
                     </div>

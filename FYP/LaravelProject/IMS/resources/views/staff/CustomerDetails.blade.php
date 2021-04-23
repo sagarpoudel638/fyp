@@ -1,9 +1,18 @@
 @extends('master')
 @section('container')
 <div style="height: max; width:max; display:flex">
-<div style="display:flex;border-radius: 1%; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); margin-left:100px;height:max; margin-top:20px; width:500px">
+<div style="display:flex;border-radius: 1%; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); margin-left:100px;height:500px; margin-top:20px; width:500px">
 
-
+    @if (Session::get('success'))
+    <div id="successtoast">
+        {{Session::get('success')}}
+     </div>
+    @endif
+    @if (Session::get('fail'))
+    <div id="failtoast">
+        {{Session::get('fail')}}
+     </div>
+    @endif
     <form action="{{route('registerCustomer')}}" method="post">
 
 
@@ -28,11 +37,7 @@
 
 <div style="display:inline; margin-left:100px">
     <div class="tablecontainer" style="margin:0px;">
-        @if (session('success'))
 
-        <a href="" style="color: rgb(66, 197, 136);"> {{session('success')}}</a>
-
-         @endif
          <form action="{{ route('searchcustomer') }}" method="GET">
             <div class="search" style="margin-top:50px">
                 <div>
@@ -70,8 +75,8 @@
 
                 <td style="width:100%;">
 
-                    <a href="" class="edit">Edit</a>
-                    <a href=""  class="delete">Delete</a>
+                    <a href="{{route('editCustomer').'/'.$customerdatum->id}}" class="edit">Edit</a>
+                    <a href="{{route('deleteCustomer').'/'.$customerdatum->id}}"  class="delete">Delete</a>
                     <a href="{{route('POSCustomer').'/'.$customerdatum->id}}" class="edit">Select Customer</a>
 
 
@@ -84,7 +89,7 @@
         @endforeach
         </tbody>
     </table>
-
+    {{$customerData->links()}}
 
 </div>
 
