@@ -31,7 +31,7 @@
 
                         </div>
                         <div class="col-md-6 text-right mt-3">
-                            <h4 class="text-danger mb-0">Sumit Education</h4><span>Nepalgunj Banke</span>
+                            <h4 class="text-danger mb-0">Success Education</h4><span>Nepalgunj Banke</span>
                         </div>
                     </div>
                     <div class="mt-3">

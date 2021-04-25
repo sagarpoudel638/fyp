@@ -39,20 +39,7 @@ class AdminAuthController extends Controller
             return back()->with('fail','No account found for this username');
         }
     }
-    /**function homedata(){
-        if(Session()->has('LoggedUser')){
 
-            $user = Users::where('id','=', session('LoggedUser'))->first();
-            $data = [
-                'LoggedUserInfo'=> $user
-            ];
-
-
-        }
-        return view('home',$data);
-
-
-    }**/
 
 
 
