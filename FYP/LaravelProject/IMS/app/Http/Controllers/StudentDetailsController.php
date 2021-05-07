@@ -43,7 +43,7 @@ class StudentDetailsController extends Controller
 
 
         if( $request->input('search')){
-            $studentdata = $studentdata->where('StudentName', 'LIKE', "%" . $request->search . "%");
+            $studentdata = $studentdata->where('itemName', 'LIKE', "%" . $request->search . "%");
         }
         $studentdata = $studentdata->paginate(10);
 

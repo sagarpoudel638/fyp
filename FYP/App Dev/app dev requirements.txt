@@ -1,0 +1,19 @@
+App Dev 
+Staff
+1.	Login 
+2.	Enter category of items
+3.	Register items (item name, description, price, purchase, date, category, MFD* , Exp. Date*) 
+4.	Register customer with details(member number, name, address, contact no, email, member type)
+5.	Search items with available stocks with dropdown / textbox 
+6.	Search customer by number or name and view purchase details by last 31 days 
+7.	Remove all items from stock (there should be function to list items which is stocked for long)
+8.	Produce a list items currently out of stock (item name should be sorted by name in ascending , stock quantity in high to low, by item stocked date in descending order )
+9.	Produce list of all customer who have not bought any item in last 31 days 
+10.	 Produce list of all items which has been unsold in last 31 days 
+11.	Change password 
+
+Admin 
+1.	Register staff and change any detail of staff 
+
+System 
+1.	Prompt message of quantity stock if it is less than 10 at the time of login by user 

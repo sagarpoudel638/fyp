@@ -56,7 +56,7 @@ class StaffSettingsController extends Controller
             return back()->with('fail', 'Incorrect Password');
         }
     }
-    return back()->with('fail', 'SOmething went wrong');
+    return back()->with('fail', 'Something went wrong');
     }
 
 
